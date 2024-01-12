@@ -2,88 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+<!--    <script src="script.js"></script>-->
     <script src="js/jquery.js"></script>
-
-</head>
+    <title>Netflix Style Gallery</title>
     <style>
-        header{
-            background-color: black;
-            color:white;
-            text-align: center;
-            padding: 100px;
-            border: 1px solid black;
-        }
-        nav{
-            background-color: white;
-            color: green;
-            text-align: center;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        nav li{
-            list-style: none;
-            display:inline;
-            padding: 70px;
-            font-size: 20px;
-            color: green;
-            font-weight: bold;
-        }
-        nav p{
-            text-align: left;
+        .gallery-container {
+            width: 80%;
+            margin: 50px auto;
         }
 
-        nav p #btn{
-            text-align: center;
-            width: 100px;
-            height: 40px;
-            font-size: 20px;
-            font-weight: bold;
+        .gallery {
+            display: flex;
+            overflow: hidden;
         }
 
-        section ul a img{
-            width: 250px;
-            heigh: 500px;
-            border-radius: 20px;
-            display: inline;
-            text-align: left;
+        .gallery img {
+            width: 200px; /* Adjust image width as needed */
+            height: auto;
+            margin-right: 20px;
+            transition: transform 0.5s;
         }
 
+        .gallery img:last-child {
+            margin-right: 0;
+        }
     </style>
     <script>
-
+        $(document).ready(function(){
+            $('.gallery').bxSlider({
+                minSlides: 5,
+                maxSlides: 5,
+                slideWidth: 220,
+                slideMargin: 20,
+                auto: true,
+                autoControls: true,
+                pager: false,
+                speed: 1000,
+                pause: 4000,
+                preventScroll: true,
+                goToPrevSlide: true,
+                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
+                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
+            });
+        });
     </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+</head>
 <body>
-    <header>
 
-    </header>
-    <nav>
-        <p>
-            <button id="btn">추천순위</button>
-        </p>
-        <ul>
-            <li>랭킹</li>
-            <li>한국</li>
-            <li>해외</li>
-            <li>로맨스</li>
-            <li>액션</li>
-            <li>호러</li>
-        </ul>
-    </nav>
-    <section>
-        <ul>
-            <a href="https://www.youtube.com/embed/BHaPyxWrP_g"><img src = "images/괴물.jpg"></a>
-            <a href="https://www.youtube.com/embed/DG7R5FMwoAM"><img src = "images/도둑들.jpg"></a>
-            <a href=""><img src = "images/7번방의 선물.jpg"></a>
-            <a href=""><img src = "images/광해.jpg"></a>
-            <a href=""><img src = "images/왕의 남자.jpg"></a>
-            <a href=""><img src = "images/태극기 휘날리며.jpg"></a>
-            <a href=""><img src = "images/해운대.jpg"></a>
-            <a href=""><img src = "images/실미도.jpg"></a>
-            <a href=""><img src = "images/국가대표.jpg"></a>
-        </ul>
-    </section>
-    <footer>
+<div class="gallery-container">
+    <div class="gallery">
+        <img src="images/7번방의 선물.jpg" alt="Movie 1">
+        <img src="images/광해.jpg" alt="Movie 2">
+        <img src="images/괴물.jpg" alt="Movie 3">
+        <img src="images/국가대표.jpg" alt="Movie 4">
+        <img src="images/도둑들.jpg" alt="Movie 5">
+        <img src="images/7번방의 선물.jpg" alt="Movie 6">
+        <img src="images/광해.jpg" alt="Movie 7">
+        <img src="images/괴물.jpg" alt="Movie 8">
+        <img src="images/국가대표.jpg" alt="Movie 9">
+        <img src="images/도둑들.jpg" alt="Movie 10">
+        <!-- Add more images as needed -->
+    </div>
+</div>
 
-    </footer>
+
 </body>
 </html>

@@ -1,0 +1,399 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Buttons · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/buttons/">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<!--    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+
+        header {
+            background-color:#eeeeee;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 5px 5px 15px 5px #ff8800;
+            border-radius: 1em  ;
+
+        }
+        h1 {
+            color: #2b2b2b;
+        }
+        h2 {
+            font-size: 40px;
+        }
+
+        nav {
+            background-color:beige;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 2px -2px 5px 5px black;
+
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            padding-right: 50px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        article {
+            background-color: aquamarine;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 30px;
+            width: 80%;
+            border-radius: 1em;
+        }
+
+        article h2 {
+            color: #333;
+            font-family: "Candara";
+        }
+
+        article p {
+            color: #555;
+            font-size: xx-large;
+        }
+
+        article a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .d1{
+            margin: 5px 5px 5px 5px;
+           /* border: 1px dotted white;*/
+            /*padding-left: 400px;*/
+            /*float: left;*/
+        }
+
+
+        #bus:hover {
+            /*transform: scale(0.7);*/
+            transform: scale(1.5);
+        }
+
+        #lamp:hover {
+            /*transform: scale(0.7);*/
+            transform: rotate(-40deg);
+        }
+        #apple:hover{
+            transform: translateY(50px);
+        }
+        #noodle:hover {
+            transform: translateX(55px);
+        }
+        p {
+            font-weight: bold;
+            font-family: "맑은 고딕", "고딕", "HY얕은샘물M"
+        }
+
+        .navi a:link, .navi a:visited{
+            font-size: 25px;
+            padding: 10px;
+            text-decoration: none;
+        }
+        /* .navi a:focus { */
+        .navi a:hover, .navi s:focus{
+           /* background-color: #222;*/
+            background-color: #f8f8f8;
+            color: #fff;  /*  글자색  */
+        }
+        .navi a:active {
+            background-color: #f00;
+        }
+
+
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+        button {
+
+        }
+        #p1 {
+            font-size: xxx-large;
+        }
+        #btn1 {
+            width: 82px;
+            height: 30px;
+            background:url("images/light.png");
+        }
+        header h1{
+            color: deeppink;
+            font-weight: bold;
+        }
+
+
+        .sidebar1 {
+            border: 1px solid #a6a6a6;
+            width: 150px;
+
+            /*left: 200px;*/
+            /*width: 100%;*/
+            /*background-color: #ccc;*/
+            padding: 20px;
+            background-color: lightgray;
+            position: absolute;
+            top: 160px;
+            left: 0;
+            height: 200%;
+
+        }
+
+        .sidebar1 a{
+            color: blue;
+            margin: -140px;
+            padding: 0;
+            top: 100px;
+          /*  height: 500px;*/
+        }
+
+        .sidebar1 ul li {
+            margin: 100px;
+            white-space: nowrap;
+            list-style-type: none;
+        }
+
+
+    </style>
+    <script>
+        function gotoLogin() {
+            window.location.href = "login/login.html";
+        }
+        function gotoMember() {
+            window.location.href = "sigin/member.html";
+        }
+        function gotoSiteMap(){
+            window.location.href = "site/sitemap.html";
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>코드랩 무비</h1>
+</header>
+
+<!--<div class="d-flex gap-2 justify-content-center py-5">
+    <button href="login/login.html" onclick="gotoLogin()" class="btn btn-primary rounded-pill px-3" type="button">로그인</button>
+    <button href="account.html" onclick="gotoMember()" class="btn btn-secondary rounded-pill px-3" type="button">회원가입</button>
+    <button href="#" onclick="gotoSiteMap()" class="btn btn-success rounded-pill px-3" type="button">사이트맵</button>
+    <button href="prd.html" class="btn btn-danger rounded-pill px-3" type="button">개인정보</button>
+    <button href="#" class="btn btn-warning rounded-pill px-3" type="button">오늘의 히트 상품</button>
+    <button href="#" class="btn btn-info rounded-pill px-3" type="button">장바구니</button>
+    <button href="#" class="btn btn-light rounded-pill px-3" type="button">찜한상품</button>
+    &lt;!&ndash;        <button class="btn btn-dark rounded-pill px-3" type="button">Dark</button>&ndash;&gt;
+    &lt;!&ndash;        <button class="btn btn-link rounded-pill px-3" type="button">Link</button>&ndash;&gt;
+</div>-->
+
+
+<div class="d1">
+<nav>
+    <ul>
+        <li class="navi"><a  href="login/login.html">로그인</a></li>
+        <li class="navi"><a  href="sigin/member.html">회원가입</a></li>
+        <li class="navi"><a  href="product/product.html">ACTION</a></li>
+        <li class="navi"><a  href="info/info.html">로맨스</a></li>
+        <li class="navi"><a  href="info/info.html">실시간 급상승</a></li>
+        <li class="navi"><a  href="info/info.html">드라마</a></li>
+        <li class="navi"><a  href="info/info.html">호러</a></li>
+    </ul>
+</nav>
+</div>
+
+
+<div class="sidebar1">
+ <!--<nav>-->
+        <ul>
+            <li class="navi1"><a  href="login/login.html">logIn</a></li>
+            <li class="navi1"><a  href="sigin/member.html">회원가입</a></li>
+            <li class="navi1"><a  href="product/product.html">액션</a></li>
+            <li class="navi1"><a  href="info/info.html">드라마</a></li>
+            <li class="navi1"><a  href="info/info.html">호러</a></li>
+            <li class="navi1"><a  href="info/info.html">다큐멘터리</a></li>
+        </ul>
+<!--</nav>-->
+</div>
+
+<section>
+    <article>
+        <h2>Add free photo effects to<br>
+            beautify your images</h2>
+        <img id="bus" src="images/bus.jpg">
+        <img id="noodle" src="images/noodle_640.png">
+        <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>
+
+
+        <p>Canva makes it easy to spice up your photos! Get creative with photo effects to make your pictures cute, warm, or breathtaking.</p>
+        <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductive photo filters too! Try our “Nordic” filter to give you photo the cool, muted tones of gazing across the Baltic Sea or enjoying a San Francisco morning. Choose the “Epic” filter to punch up your photos and grant them gravitas with high contrast colors and a retro twinge. Our “Street” filter can give your pictures the weight of black and white with a dash of worn color and a heavy vignette. We have photo filters for every mood!</span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article>
+        <h2>Important Oriental Lamp!</h2>
+        <img id="lamp" src="images/lamp.jpg">
+        <img src="images/lanna-food_640.png">
+        <p>Apply whimsical, soft photo filters</p>
+        <apan>Canva makes it easy to spice up your photos! Get creative with photo effects to make your pictures cute, warm, or breathtaking.</apan>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article>
+        <h2>Make bolder images with striking photo filters</h2>
+<!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+        <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>
+        <span>We have a bounty of photo filters to choose from for all kinds of occasions. Select the “Rosie” filter for a rose-wrapped look perfect for lovers and tender moments. Or try our “Retro” filter for that scrapbook-inspired vintage effect that’s all the rage. You can click through all of our filters. You can also use this filter on images for your book covers, posters, or on our magazine mockups to see what looks best for your stunning subjects. If one of our filters doesn’t look so great after all, never fear! Simply click “Normal” and your photo will go right back to the start, good as new.</span>
+        <a href="#">더 읽기</a>
+    </article>
+</section>
+
+<footer>
+
+
+   <!-- <p id="p1">&copy; 2024 오늘 하루동안 24시간 로켓배송!</p>-->
+
+</footer>
+<!--<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    function goProduct () {
+        window.location.href = "product/product.html"
+    }
+</script>
+</body>
+</html>

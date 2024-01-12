@@ -2,87 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--    <link rel="stylesheet" href="styles.css">-->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-    <!--    <script src="script.js"></script>-->
-    <script src="js/jquery.js"></script>
-    <title>Netflix Style Gallery</title>
+    <title>Title</title>
+
+</head>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
+        header{
+            background-color: black;
+            color:white;
+            text-align: center;
+            padding: 100px;
+            border: 1px solid black;
+        }
+        nav{
+            background-color: white;
+            color: green;
+            text-align: center;
         }
 
-        .gallery-container {
-            width: 80%;
-            margin: 50px auto;
+        nav li{
+            list-style: none;
+            display:inline;
+            padding: 70px;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+        }
+        nav p{
+            text-align: left;
         }
 
-        .gallery {
-            display: flex;
-            overflow: hidden;
+        nav p #btn{
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        section ul{
+            margin-top: 20px;
         }
 
-        .gallery img {
-            width: 200px; /* Adjust image width as needed */
-            height: auto;
-            margin-right: 20px;
-            transition: transform 0.5s;
+        section ul a img{
+            width: 250px;
+            heigh: 500px;
+            border-radius: 20px;
+            display: inline;
+            text-align: left;
+            margin-bottom: 20px;
         }
 
-        .gallery img:last-child {
-            margin-right: 0;
-        }
     </style>
     <script>
-        $(document).ready(function(){
-            $('.gallery').bxSlider({
-                minSlides: 5,
-                maxSlides: 5,
-                slideWidth: 220,
-                slideMargin: 20,
+        $(function() {
+            $(".slide_gallery").bxSlider({
                 auto: true,
-                autoControls: true,
-                pager: false,
-                speed: 1000,
-                pause: 4000,
-                preventScroll: true,
-                goToPrevSlide: true,
-                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
-                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
+                autoControls: false,
             });
         });
     </script>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-</head>
 <body>
+    <header>
 
-<div class="gallery-container">
-    <div class="gallery">
-<!--        김종욱 찾기-->
-        <img src="https://an2-img.amz.wtchn.net/image/v2/0GfAXX2RniqP-RsZY_Nb7A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMjltZW5GNFl6aHhZWFZqZVdSb09YQmljSFZ0SW4wLm4ybnlRaHdhemlQbFJkRi1kYXhOQ3E3dEtfNnZFcUx3d3hYcElHNHZIQkk" alt="Movie 1">
-        <!--        어바웃타임-->
-        <img src="https://an2-img.amz.wtchn.net/image/v2/jENE7VlqUpBKBIfpyHRing.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMmt3WjNsdlpEbDFlRzFwZUdrNVltUjZhV2xySW4wLjRjRFByUGhqQUt2c2tsdndzWmRmUmM2bjlYbGc1OWJaaWhXWXJmaEdMeWc
-" alt="Movie 2">
-<!--       플랜맨-->
-        <img src="https://an2-img.amz.wtchn.net/image/v2/PLKW45bXTvLeWY9XXDM0eQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2x0WVdsc2JXdGljbVZ0Y1RadGRuUTNaV3BuSW4wLlZQYWs3ZUxpRnhaLXJGQ2hDbm1NZUREck51dmVqQ3NaZTYzNWRqd1A3UjA" alt="Movie 3">
+    </header>
+    <nav>
+        <p>
+            <button id="btn">추천순위</button>
+        </p>
+        <ul>
+            <li>랭킹</li>
+            <li>한국</li>
+            <li>해외</li>
+            <li>로맨스</li>
+            <li>액션</li>
+            <li>호러</li>
+        </ul>
+    </nav>
+    <section id="gallery_wrap">
+        <ul class="slide_gallery">
+            <a href="https://www.youtube.com/embed/BHaPyxWrP_g"><img src = "images/kor_1.jpg"></a>
+            <a href="https://www.youtube.com/embed/DG7R5FMwoAM"><img src = "images/kor_2.jpg"></a>
+            <a href="https://www.youtube.com/embed/rvcN5uFf_VI"><img src = "images/kor_3.jpg"></a>
+            <a href="https://www.youtube.com/embed/E-LkaQgj0qM"><img src = "images/kor_4.jpg"></a>
+            <a href="https://www.youtube.com/embed/JfGpTWM-TNk"><img src = "images/kor_5.jpg"></a>
+            <a href="https://www.youtube.com/embed/DYE2aDl2RhI"><img src = "images/kor_6.jpg"></a>
+            <a href="https://www.youtube.com/embed/bETrnbq_OLM"><img src = "images/kor_7.jpg"></a>
+            <a href="https://www.youtube.com/embed/3PWIFA-ulP0"><img src = "images/kor_8.jpg"></a>
+            <a href="https://www.youtube.com/embed/PG7ftMRWO9c"><img src = "images/kor_9.jpg"></a>
+        </ul>
+    </section>
+    <footer>
 
-        <img src="https://an2-img.amz.wtchn.net/image/v2/Lbf-6tntBHjpFUjZefUg3A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2RxZW1kbVkyUnBNM2xuY1RKMWVHMXNOak53SW4wLnZMc2lmR0Jpc2g1ckw3YkpUaU5HZ2xDeDMxa2I0Z21hZEJCYzhVcENxMlU
-" alt="Movie 4">
-        <img src="images/도둑들.jpg" alt="Movie 5">
-        <img src="images/7번방의 선물.jpg" alt="Movie 6">
-        <img src="images/광해.jpg" alt="Movie 7">
-        <img src="images/괴물.jpg" alt="Movie 8">
-        <img src="images/국가대표.jpg" alt="Movie 9">
-        <img src="images/도둑들.jpg" alt="Movie 10">
-        <!-- Add more images as needed -->
-    </div>
-</div>
-
-
+    </footer>
 </body>
 </html>

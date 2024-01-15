@@ -165,7 +165,7 @@
             background-color: aquamarine;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
             margin: 20px;
-            padding: 30px;
+            padding: 20px;
             width: 80%;
             border-radius: 1em;
         }
@@ -345,25 +345,93 @@
             width: 40px;
 
         }
+        .next-1{
+            font-size: 28px;
+        }
+        #movie-1 {
+            position: absolute;
+            right: 8px;
+            height: 230px;
+            top: 5px;
+            left: 2px;
+            border-top: 82px;
+        }
      </style>
     <script>
-        function gotoLogin() {
-            window.location.href = "login/login.html";
-        }
-        function gotoMember() {
-            window.location.href = "sigin/member.html";
-        }
-        function gotoSiteMap(){
-            window.location.href = "site/sitemap.html";
-        }
+        $(function(){
 
-        function goPlay(){
-            window.location.href = "https://www.youtube.com/watch?v=p2WP7CPPypA";
-        }
 
-        function goPause(){
-            alert("정지확인");
-        }
+
+
+         /*   function delivery(){
+                alert("이전확인");*/
+
+            $('.slide_gallery').bxSlider({
+                auto: true,
+                autoControls: false,
+                pagerCustom: '.slider-pager'
+            });
+
+         function delivery(move) {
+             alert("확인");
+             let num = [];
+             if (num < 1)
+                 for (let i = 0; i <= num.length; i--) {
+                     num++;
+                     $("prev").attr("src", "images/kor_$num[i].jpg");
+                 } else if (num > 1) {
+                 for (let i = 0; i <= move.length; i++) {
+                     $("next").attr("src", "images/kor_$num[i].jpg");
+                 }
+             }
+         }
+         /*   }*/
+
+
+            /*
+                    function delivery(move){
+                        var goPrev = $("#prev").
+                        var num=1;
+                        window.location.href = "https://www.youtube.com/watch?v=p2WP7CPPypA";
+                    }*/
+
+            function goPause(){
+                alert("정지확인");
+            }
+
+            $("#play-2").on(function(){
+                "click": function(){
+                    alert("제이쿼리 확인합니다.");
+                }
+            });
+
+            function gotoLogin() {
+                window.location.href = "login/login.html";
+            }
+            function gotoMember() {
+                window.location.href = "sigin/member.html";
+            }
+            function gotoSiteMap(){
+                window.location.href = "site/sitemap.html";
+            }
+
+        });
+
+
+
+    /*    var num=1;
+        function delivery(move) {
+            if(move) {
+                if(num==3) return;
+                num++;
+            } else {
+                if(num==1) return;
+                num--;
+            }
+
+            var imgTag=document.getElementById("");
+            imgTag.setAttribute("src","images/kor_"+num+".jpg");*/
+
     </script>
 </head>
 <body>
@@ -417,9 +485,10 @@
 <section>
     <article class="box-1">
         <h2>추천영화</h2>
-        <img id="bus" src="images/bus.jpg">
-        <img id="noodle" src="images/noodle_640.png">
-        <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>
+       <!-- <img id="bus" src="images/bus.jpg">-->
+        <!--<img id="noodle" src="images/noodle_640.png">-->
+        <iframe id="movie-1" width="250px" height="300px" src="https://www.youtube.com/embed/nnCDkM9BVBs" title="지브리 OST 🌹 지브리 오르골 모음 🎹 기분 좋은 지브리 음악" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       <!-- <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>-->
         <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
        <!-- <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>-->
         <a href="#">더 읽기</a>
@@ -531,26 +600,34 @@
 </section>
 <div class="media-1">
    <div id="container-image-1">
+       <ul class="slide_gallery">
     <!--<img src="images/실미도_e1.jpg">-->
-       <iframe width="490" height="710" src="https://www.youtube.com/embed/p2WP7CPPypA" title="주말 BGM 지브리 치유 🎶 사상 최고의 지브리 스튜디오 음악을 듣는 2 시간의 휴식" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+       <!--<iframe width="490" height="710" src="https://www.youtube.com/embed/p2WP7CPPypA" title="주말 BGM 지브리 치유 🎶 사상 최고의 지브리 스튜디오 음악을 듣는 2 시간의 휴식" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_1.jpg"></li>
+       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_2.jpg"></li>
+       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_3.jpg"></li>
+     <!--  <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_4.jpg"></li>
+       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_5.jpg"></li>
+       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_6.jpg"></li>-->
+       </ul>
        <!--<iframe width="450" height="538" src="https://www.youtube.com/embed/영상코드?autoplay=1&mute=1"
                title="영상제목" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
     </div>
     <div id="media-control-1">
-    <a id="prev" href="#"><<이전&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a id="prev" href="#" onclick="delivery(0)"><<이전&nbsp;&nbsp;&nbsp;&nbsp;</a>
    <span class="pause-1">
     <a id="pause">정지&nbsp;&nbsp;</a>
-     <img id="play-2" src="images/pause-1_e1.png" onclick="goPause()">
+     <img id="pause-2" src="images/pause-1_e1.png">
     <a id="play-1">재생
     <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">
-        &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp;
     </a>
    </span>
    <span>
       <!-- <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">-->
-       <a>다음>></a>
+       <a onclick="delivery(1)" href="#" class="next-1 ">다음>></a>
+
    </span>
     </div>
 </div>

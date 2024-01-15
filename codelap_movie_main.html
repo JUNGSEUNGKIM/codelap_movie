@@ -338,7 +338,11 @@
 
         }
         .pause-1 {
-            font-size: 30px;
+            font-size: 28px;
+
+        }
+        #play-2 {
+            width: 40px;
 
         }
      </style>
@@ -351,6 +355,14 @@
         }
         function gotoSiteMap(){
             window.location.href = "site/sitemap.html";
+        }
+
+        function goPlay(){
+            window.location.href = "https://www.youtube.com/watch?v=p2WP7CPPypA";
+        }
+
+        function goPause(){
+            alert("정지확인");
         }
     </script>
 </head>
@@ -527,9 +539,18 @@
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
     </div>
     <div id="media-control-1">
-    <a id="prev" href="#"><<이전</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="prev" href="#"><<이전&nbsp;&nbsp;&nbsp;&nbsp;</a>
    <span class="pause-1">
-    <a id="pause">정지</a>
+    <a id="pause">정지&nbsp;&nbsp;</a>
+     <img id="play-2" src="images/pause-1_e1.png" onclick="goPause()">
+    <a id="play-1">재생
+    <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+    </a>
+   </span>
+   <span>
+      <!-- <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">-->
+       <a>다음>></a>
    </span>
     </div>
 </div>

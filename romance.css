@@ -8,30 +8,35 @@ header{ font-size: 27px;
     border-bottom: 1px solid black;
     margin: auto;
     text-align: left;
-    background-size: contain ;
-    background: #cccccc;
+   background-color: lime;
+    padding: 5px 30px;
 }
-.main_1 h3 {
+.main h3 {
+    padding-top: 5px;
+    background: #cccccc;
 }
 
 .main_1 {
     display: flex;
-    width: 860px;
-    height:1280px ;
     margin: auto;
-    text-align: center;
+    width: 860px;
+    height:1000px ;
     background: skyblue;
-
-}
-.main_1 section ul,
-.main_1 section img  {
-    display: flex;
     text-align: center;
-    width: 200px; /* Adjust image width as needed */
-    height: auto;
-    margin-right: -5px;
-    background: #cccccc;
+    font-size: 12px;
+    padding-top: 34px;
 }
-.ㅁ{
-    border-bottom: 1px solid black;
+.main_1 div{}
+
+.main_1 section ul{
+    margin: auto;
+}
+.main_1 section ul img  {
+    width: 180px; /* Adjust image width as needed */
+    height: auto;
+    padding-left: 40px;
+    display: flex;
+}
+.main_2 div{
+    margin: auto;
 }

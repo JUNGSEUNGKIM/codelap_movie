@@ -323,6 +323,7 @@
             width: ;
             padding: 3px;
             border: 1px solid red;
+            /*overflow: hidden;*/
         }
         #prev{
             font-size: 25px;
@@ -356,15 +357,29 @@
             left: 2px;
             border-top: 82px;
         }
+        .slide_gallery {
+              /*overflow: hidden;*/
+              visibility: hidden;
+              width: 300px;
+              height: 400px;
+         }
+        #p1 {
+            width: 450px;
+        }
+        .u1 {
+            visibility: hidden;
+        }
+        .media-1 {
+            width: 500px;
+            height: 30px;
+            position: absolute;
+            margin-top: 0;
+            margin-bottom: 720px;
+            margin-left: 5px;
+        }
      </style>
     <script>
-        $(function(){
-
-
-
-
-         /*   function delivery(){
-                alert("이전확인");*/
+        $(function () {
 
             $('.slide_gallery').bxSlider({
                 auto: true,
@@ -372,21 +387,53 @@
                 pagerCustom: '.slider-pager'
             });
 
-         function delivery(move) {
-             alert("확인");
-             let num = [];
-             if (num < 1)
-                 for (let i = 0; i <= num.length; i--) {
-                     num++;
-                     $("prev").attr("src", "images/kor_$num[i].jpg");
-                 } else if (num > 1) {
-                 for (let i = 0; i <= move.length; i++) {
-                     $("next").attr("src", "images/kor_$num[i].jpg");
-                 }
-             }
-         }
-         /*   }*/
 
+            function delivery(move) {
+                //alert("확인");
+                let num = 0;
+                let photoIndex = $(".photo1").index();
+                alert(photoIndex);
+                if (num < 1) {
+                    for (let i = 0; i <= move.length; i--) {
+                        num += i;
+                        $("prev").attr("src", "images/kor_3.jpg");
+                    }
+                } else if (num > 1) {
+                    for (let i = 0; i <= move.length; i++) {
+                        //num -= i;
+                        $("next").attr("src", "images/kor_+'$num[i]'+.jpg");
+                    }
+                }
+            }
+
+            /*   }*/
+
+            $("#prev").on("click", function (e) {
+                e.preventDefault();
+                let num = 0;
+
+                let photoIndex = $(".photo1").index();
+                //alert("이전"+ photoIndex);
+                alert("num :" + num+","+ photoIndex);
+                if (num <= 0) {
+
+                  /*  $.each(myArray, function(index, value) {
+                        console.log("Index: " + index + ", Value: " + value);
+                    });
+                    */
+                    for (let i = 0; i <= photoIndex[num].length; i--) {
+                        num -= i;
+                        $("prev").attr("src", "images/kor_+'num[i]'+.jpg");
+                    }
+                } else if (num > 1) {
+                    for (let i = 0; i >= photoIndex[num].length; i++) {
+                        num += i;
+                        $("next").attr("src", "images/kor_+'num[i]'+.jpg");
+                    }
+                }
+
+
+            })
 
             /*
                     function delivery(move){
@@ -395,42 +442,27 @@
                         window.location.href = "https://www.youtube.com/watch?v=p2WP7CPPypA";
                     }*/
 
-            function goPause(){
-                alert("정지확인");
-            }
+            /*     function goPause(){
+                     alert("정지확인");
+                 }*/
 
-            $("#play-2").on(function(){
-                "click": function(){
-                    alert("제이쿼리 확인합니다.");
-                }
-            });
-
-            function gotoLogin() {
-                window.location.href = "login/login.html";
-            }
-            function gotoMember() {
-                window.location.href = "sigin/member.html";
-            }
-            function gotoSiteMap(){
-                window.location.href = "site/sitemap.html";
-            }
 
         });
 
+        function gotoLogin() {
+            window.location.href = "login/login.html";
+        }
 
+        function gotoMember() {
+            window.location.href = "sigin/member.html";
+        }
 
-    /*    var num=1;
-        function delivery(move) {
-            if(move) {
-                if(num==3) return;
-                num++;
-            } else {
-                if(num==1) return;
-                num--;
-            }
-
-            var imgTag=document.getElementById("");
-            imgTag.setAttribute("src","images/kor_"+num+".jpg");*/
+        function gotoSiteMap() {
+            window.location.href = "site/sitemap.html";
+        }
+        function goProduct () {
+            window.location.href = "product/product.html"
+        }
 
     </script>
 </head>
@@ -469,16 +501,14 @@
 
 
 <div class="sidebar1">
- <!--<nav>-->
-        <ul>
-            <li class="navi1"><a  href="login/login.html">logIn</a></li>
+        <ul class="u1">
+            <li class="navi1"><a  href="login/login.html">login</a></li>
             <li class="navi1"><a  href="sigin/member.html">회원가입</a></li>
             <li class="navi1"><a  href="product/product.html">액션</a></li>
             <li class="navi1"><a  href="info/info.html">드라마</a></li>
             <li class="navi1"><a  href="info/info.html">호러</a></li>
             <li class="navi1"><a  href="info/info.html">다큐멘터리</a></li>
         </ul>
-<!--</nav>-->
 </div>
 
 
@@ -603,12 +633,12 @@
        <ul class="slide_gallery">
     <!--<img src="images/실미도_e1.jpg">-->
        <!--<iframe width="490" height="710" src="https://www.youtube.com/embed/p2WP7CPPypA" title="주말 BGM 지브리 치유 🎶 사상 최고의 지브리 스튜디오 음악을 듣는 2 시간의 휴식" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_1.jpg"></li>
-       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_2.jpg"></li>
-       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_3.jpg"></li>
-     <!--  <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_4.jpg"></li>
-       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_5.jpg"></li>
-       <li><img src="images/kor_1.jpg" id="photo" alt="images/kor_6.jpg"></li>-->
+       <li><img src="images/kor_1.jpg" id="p1" class="photo1" alt=""></li>
+       <li><img src="images/kor_2.jpg" id="p2" class="photo1" alt=""></li>
+       <li><img src="images/kor_3.jpg" id="p3" class="photo1" alt=""></li>
+       <li><img src="images/kor_4.jpg" id="p4" class="photo1" alt=""></li>
+       <li><img src="images/kor_5.jpg" id="p5" class="photo1" alt=""></li>
+       <li><img src="images/kor_6.jpg" id="p6" class="photo1" alt=""></li>
        </ul>
        <!--<iframe width="450" height="538" src="https://www.youtube.com/embed/영상코드?autoplay=1&mute=1"
                title="영상제목" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
@@ -641,10 +671,5 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
 </footer>-->
 <!--<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script>
-    function goProduct () {
-        window.location.href = "product/product.html"
-    }
-</script>
 </body>
 </html>

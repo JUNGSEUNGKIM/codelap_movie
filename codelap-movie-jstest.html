@@ -112,6 +112,8 @@
                 // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
             });
         });
+
+
     </script>
     <!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
 
@@ -163,6 +165,40 @@
 
         div{
         }
+
+
+    /*    cart css     */
+
+
+         .cart {
+             position: fixed;
+             bottom: 20px;
+             right: 20px;
+             background-color: #3498db;
+             color: #fff;
+             padding: 10px;
+             border-radius: 5px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+         }
+
+        .cart-content {
+            display: none;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+
+    /*    teacher chatbot css  */
+
+
     </style>
 
 <!--    <script src="js/jquery.js"></script>-->
@@ -205,6 +241,49 @@
 </div>
 
 
+<div class="cart">
+    <button id="toggleCartBtn"><img src="css/images/chatBot.jpg" alt="chat-bot" width="50px" height="50px"></button>
+    <div id="cartContent" class="cart-content">
+        <span class="close" id="closeCartBtn">&times;</span>
+<!--        <p>This is a fixed cart example always positioned at the bottom right!</p>-->
+    </div>
+</div>
+
 </body>
 <script src="js/jquery.bxslider.min.js"></script>
+<script>
+    document.getElementById('toggleCartBtn').addEventListener('click', function() {
+        document.getElementById('cartContent').style.display = 'block';
+    });
+
+
+
+    document.getElementById('closeCartBtn').addEventListener('click', function() {
+        document.getElementById('cartContent').style.display = 'none';
+    });
+</script>
+
+<script src="js/chatbot.js"></script>
+<style>
+    #cartContent{
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: 300px;
+        overflow-y: scroll;
+    }
+    #input-container {
+        width: 300px;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom:0;
+
+    }
+    #user-input {
+        margin-bottom: 5px;
+    }
+</style>
 </html>

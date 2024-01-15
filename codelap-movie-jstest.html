@@ -3,13 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <link rel="stylesheet" href="styles.css">-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
+    <script>
+        var img_src;
+        var movieArray = [
+            [1,"images/kor_1.jpg","괴물","송강오 등등","괴물이 나오는 영화"],
+            [2,"images/kor_2.jpg","도둑들","김혜수 등등","도둑영화"],
+            [3,"images/kor_3.jpg","7번방의 선물", "등등","감빵영화"],
+        ];
+
+        // var galleryItem = document.createElement("div");
+        // var galleryImg = document.createElement("img");
+        // var h4Tag = document.createElement("h4");
+        //
+        // // galleryItem.className = "gallery-item";
+        // galleryImg.src = "images/kor_1.jpg";
+        // galleryImg.alt="Movie 1";
+
+        // galleryItem.appendChild(document.createTextNode("aabc"));
+
+        // h4Tag.appendChild(document.createTextNode("괴물영화"));
+
+        // var targetElement =
+        // document.getElementById("gallery").appendChild(galleryItem);
+
+        // targetElement.appendChild(galleryItem);
+        // galleryItem.appendChild(galleryImg);
+        // galleryItem.appendChild(h4Tag);
+        // galleryItem.appendChild(galleryImg);
+        // targetElement.appendChild(galleryItem);
+
+        $(function( ) {
+            for (var i = 0; i < movieArray.length; i++) {
+                // for(var j = 0; j < movieArray[i].length; j++) {
+                    $(".gallery").append("<div class='gallery-item'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='ab'>" +
+
+                        "<iframe style='display:none' width='100' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
+                        "<h4>" + movieArray[i][2] + "</h4></div>");
+
+                    // $(".gallery-item").after(")
+                    // $(".gallery-item").after("");
+
+            }
+
+            $(".gallery-item").hover(function (){
+                // img_src = $(this).find('img').attr('src');
+                for(var i=0; i < 10; i++){
+                }
+                $(this).find('img').hide();
+                $(this).find('iframe').show();
+                // replaceWith("<iframe  width='100%' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?si=n4bl3OHNr9oq4I2r' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0' ></iframe>");
+            },function (){
+                $(this).find('iframe').hide();
+                $(this).find('img').show();
+                 // alert(img_src);
+                // $(this).find('iframe').replaceWith("<img  src='"+img_src+"' alt='이미지 대체 텍스트'>");
+            });
+
+
+
+            // 아래 두 함수는 교체할 요소의 위치가 서로 틀린 만큼
+            // 사용법에 주의하자
+            // $("#img_delete").hover(function( ) {
+            //     alert("호버");},function (){
+            // //     $(".txt2")
+            // //         .css({"background-color":"aqua"});
+            // // }, function(){
+            // //     $(".txt2")
+            // //         .css({"background":"none"});
+            //     $(\"#img_delete\").replaceWith(\"<iframe src=\\"https://www.youtube.com/embed/bdD3NH-_i-U?si=C2WoBgCRIO3LVQaV\\" title=\\"YouTube video player\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\\" allowfullscreen frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>");
+            // });
+            // alert("check");
+
+            // //$("기존요소").replaceWith("교체할 새요소")
+            // $("h2").replaceWith("<h3>replace method</h3>");
+            // //$("교체할 새요소").replaceAll("기존요소")
+            // $("<p>Change</p>").replaceAll("div");
+        });
+
+
+
+
+
+        $(document).ready(function(){
+            $('.gallery').bxSlider({
+                minSlides: 4,
+                maxSlides: 5,
+                slideWidth: 220,
+                slideMargin: 20,
+                // auto: true,
+                // autoControls: true,
+                // pager: false,
+                // speed: 1000,
+                // pause: 4000,
+
+                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
+                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
+            });
+        });
+    </script>
+<!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
+
 <!--    <script src="script.js"></script>-->
-    <script src="js/jquery.js"></script>
+
     <title>Netflix Style Gallery</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
     <style>
+        .gallery-item{
+
+        }
         body {
             margin: 0;
             padding: 0;
@@ -36,48 +139,62 @@
         .gallery img:last-child {
             margin-right: 0;
         }
+
+        .gallery-item {
+            width: 500px; /* 갤러리 아이템의 너비 조절 */
+            margin-right: 20px;
+            border: 1px solid gray;
+        }
+
+        .gallery img{
+            width:100%;
+            margin-right: auto;
+        }
+
+        div{
+        }
     </style>
-    <script>
-        $(document).ready(function(){
-            $('.gallery').bxSlider({
-                minSlides: 5,
-                maxSlides: 5,
-                slideWidth: 220,
-                slideMargin: 20,
-                auto: true,
-                autoControls: true,
-                pager: false,
-                speed: 1000,
-                pause: 4000,
-                preventScroll: true,
-                goToPrevSlide: true,
-                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
-                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
-            });
-        });
-    </script>
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.bxslider.min.js">
-    </script>
+
+<!--    <script src="js/jquery.js"></script>-->
+<!--    <script src="js/jquery.bxslider.min.js"></script>-->
 </head>
 <body>
 
 <div class="gallery-container">
+<!--    <ul class="gallery">-->
+<!--        <li><div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 1">-->
+<!--            <h4> 괴물 </h4></div></li>-->
+<!--        <li> <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 2">-->
+<!--            <h4> 괴물 </h4></div></li>-->
+<!--        <li> <div class="gallery-item"><img src="images/kor_2.jpg" alt="Movie 3"><h4> 괴물 </h4></div></li>-->
+<!--        <li> <div class="gallery-item"><img src="images/kor_3.jpg" alt="Movie 4"><h4> 괴물 </h4></div></li>-->
+<!--        <li>  <div class="gallery-item"><img src="images/kor_4.jpg" alt="Movie 5"><h4> 괴물 </h4></div></li>-->
+<!--        -->
+<!--        <li>  <div class="gallery-item"><img src="images/kor_5.jpg" alt="Movie 6"><h4> 괴물 </h4></div></li>-->
+<!--        <li>  <div class="gallery-item"> <img src="images/kor_6.jpg" alt="Movie 7"><h4> 괴물 </h4></div></li>-->
+<!--        <li>  <div class="gallery-item"><img src="images/kor_7.jpg" alt="Movie 8"><h4> 괴물 </h4></div></li>-->
+<!--        <li>  <div class="gallery-item"><img src="images/kor_8.jpg" alt="Movie 9"><h4> 괴물 </h4></div></li>-->
+<!--        <li>   <div class="gallery-item"><img src="images/kor_9.jpg" alt="Movie 10"><h4> 괴물 </h4></div>-->
+<!--        &lt;!&ndash; Add more images as needed &ndash;&gt;-->
+<!--    </ul>-->
     <div class="gallery">
-        <img src="images/7번방의 선물.jpg" alt="Movie 1">
-        <img src="images/광해.jpg" alt="Movie 2">
-        <img src="images/괴물.jpg" alt="Movie 3">
-        <img src="images/국가대표.jpg" alt="Movie 4">
-        <img src="images/도둑들.jpg" alt="Movie 5">
-        <img src="images/7번방의 선물.jpg" alt="Movie 6">
-        <img src="images/광해.jpg" alt="Movie 7">
-        <img src="images/괴물.jpg" alt="Movie 8">
-        <img src="images/국가대표.jpg" alt="Movie 9">
-        <img src="images/도둑들.jpg" alt="Movie 10">
+<!--        <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 1">-->
+<!--        <h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 2">-->
+<!--            <h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_2.jpg" alt="Movie 3"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_3.jpg" alt="Movie 4"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_4.jpg" alt="Movie 5"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_5.jpg" alt="Movie 6"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"> <img src="images/kor_6.jpg" alt="Movie 7"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_7.jpg" alt="Movie 8"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_8.jpg" alt="Movie 9"><h4> 괴물 </h4></div>-->
+<!--        <div class="gallery-item"><img src="images/kor_9.jpg" alt="Movie 10"><h4> 괴물 </h4></div>-->
         <!-- Add more images as needed -->
     </div>
 </div>
 
 
 </body>
+<script src="js/jquery.bxslider.min.js"></script>
 </html>

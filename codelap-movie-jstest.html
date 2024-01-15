@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
     <script>
         var img_src;
         var movieArray = [
-            [1,"images/kor_1.jpg","괴물","송강오 등등","괴물이 나오는 영화"],
-            [2,"images/kor_2.jpg","도둑들","김혜수 등등","도둑영화"],
-            [3,"images/kor_3.jpg","7번방의 선물", "등등","감빵영화"],
-            [1,"images/kor_4.jpg","괴물","송강오 등등","괴물이 나오는 영화"],
-            [2,"images/kor_5.jpg","도둑들","김혜수 등등","도둑영화"],
-            [3,"images/kor_6.jpg","7번방의 선물", "등등","감빵영화"],
-            [1,"images/kor_7.jpg","괴물","송강오 등등","괴물이 나오는 영화"],
-            [2,"images/kor_8.jpg","도둑들","김혜수 등등","도둑영화"],
-            [3,"images/kor_9.jpg","7번방의 선물", "등등","감빵영화"],
+            [1, "images/kor_1.jpg", "괴물", "송강오 등등", "괴물이 나오는 영화", "https://www.youtube.com/embed/8DtrRadXsjI?autoplay=1&mute=1"],
+            [2, "images/kor_2.jpg", "도둑들", "김혜수 등등", "도둑영화"],
+            [3, "images/kor_3.jpg", "7번방의 선물", "등등", "감빵영화"],
+            [1, "images/kor_4.jpg", "괴물", "송강오 등등", "괴물이 나오는 영화"],
+            [2, "images/kor_5.jpg", "도둑들", "김혜수 등등", "도둑영화"],
+            [3, "images/kor_6.jpg", "7번방의 선물", "등등", "감빵영화"],
+            [1, "images/kor_7.jpg", "괴물", "송강오 등등", "괴물이 나오는 영화"],
+            [2, "images/kor_8.jpg", "도둑들", "김혜수 등등", "도둑영화"],
+            [3, "images/kor_9.jpg", "7번방의 선물", "등등", "감빵영화"],
         ];
-
+        //
         // var galleryItem = document.createElement("div");
         // var galleryImg = document.createElement("img");
         // var h4Tag = document.createElement("h4");
@@ -39,36 +40,40 @@
         // galleryItem.appendChild(galleryImg);
         // targetElement.appendChild(galleryItem);
 
-        $(function( ) {
+        $(function () {
             for (var i = 0; i < movieArray.length; i++) {
                 // for(var j = 0; j < movieArray[i].length; j++) {
-                    $(".gallery").append("<div class='gallery-item'>" +
-                        "<img src='" + movieArray[i][1] + "' alt='ab'>" +
+                $(".gallery").append("<div class='gallery-item'>" +
+                    "<img src='" + movieArray[i][1] + "' alt='ab' id='" + i + "'>" +
 
-                        "<iframe style='display:none' width='100' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
-                        // "<iframe style='display:none' width='100' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
-                        "<h4>" + movieArray[i][3] + "</h4></div>");
+                    "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='1'></iframe>" +
+                    // "<iframe style='display:none' width='100' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
+                    "<h4>" + movieArray[i][3] + "</h4></div>");
 
-                    // $(".gallery-item").after(")
-                    // $(".gallery-item").after("");
+                // $(".gallery-item").after(")
+                // $(".gallery-item").after("");
 
             }
+        })
 
-            $(".gallery-item").hover(function (){
+        $(function () {
+            $(".gallery-item").hover(function () {
                 // img_src = $(this).find('img').attr('src');
-                for(var i=0; i < 10; i++){
+                for (var i = 0; i < 10; i++) {
                 }
                 $(this).find('img').hide();
+                $(this).find('iframe').attr('src', movieArray[parseInt($(this).find('img').attr('id'))][5]);
                 $(this).find('iframe').show();
-                $(this).find('iframe').attr('src','https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1');
+
+
+                // $(this).find('iframe').attr('src','https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1');
                 // replaceWith("<iframe  width='100%' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?si=n4bl3OHNr9oq4I2r' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0' ></iframe>");
-            },function (){
+            }, function () {
                 $(this).find('iframe').hide();
                 $(this).find('img').show();
-                 // alert(img_src);
+                // alert(img_src);
                 // $(this).find('iframe').replaceWith("<img  src='"+img_src+"' alt='이미지 대체 텍스트'>");
             });
-
 
 
             // 아래 두 함수는 교체할 요소의 위치가 서로 틀린 만큼
@@ -91,10 +96,7 @@
         });
 
 
-
-
-
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.gallery').bxSlider({
                 minSlides: 4,
                 maxSlides: 5,
@@ -111,14 +113,14 @@
             });
         });
     </script>
-<!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
+    <!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
 
-<!--    <script src="script.js"></script>-->
+    <!--    <script src="script.js"></script>-->
 
     <title>Netflix Style Gallery</title>
     <link rel="stylesheet" href="css/jquery.bxslider.min.css">
     <style>
-        .gallery-item{
+        .gallery-item {
 
         }
         body {

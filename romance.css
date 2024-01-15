@@ -1,23 +1,26 @@
 header{ font-size: 27px;
     font-weight: bold;
     text-align: center;
-    text-decoration:#f1f1f1;
 }
+
 .main{
-    width: 1280px;
-    text-decoration:#f1f1f1;
-    text-align: center;
-
+    width: 800px;
+    border-bottom: 1px solid black;
+    margin: auto;
+    text-align: left;
+    background-size: contain ;
+    background: #cccccc;
 }
-
+.main_1 h3 {
+}
 
 .main_1 {
     display: flex;
     width: 860px;
-    height:1280 ;
+    height:1280px ;
     margin: auto;
     text-align: center;
-    background: #6528e0;
+    background: skyblue;
 
 }
 .main_1 section ul,
@@ -28,4 +31,7 @@ header{ font-size: 27px;
     height: auto;
     margin-right: -5px;
     background: #cccccc;
+}
+.ㅁ{
+    border-bottom: 1px solid black;
 }

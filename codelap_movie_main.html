@@ -36,132 +36,7 @@
             margin: 0;
         }
 
-        header {
-            background-color:#eeeeee;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            box-shadow: 5px 5px 15px 5px #ff8800;
-            border-radius: 1em  ;
 
-        }
-        h1 {
-            color: #2b2b2b;
-        }
-        h2 {
-            font-size: 40px;
-        }
-
-        nav {
-            background-color:beige;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 2px -2px 5px 5px black;
-
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-            padding-right: 50px;
-        }
-
-        section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        a {
-            text-decoration: none;
-        }
-
-        article {
-            background-color: aquamarine;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 30px;
-            width: 80%;
-            border-radius: 1em;
-        }
-
-        article h2 {
-            color: #333;
-            font-family: "Candara";
-        }
-
-        article p {
-            color: #555;
-            font-size: xx-large;
-        }
-
-        article a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        article a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .d1{
-            margin: 5px 5px 5px 5px;
-           /* border: 1px dotted white;*/
-            /*padding-left: 400px;*/
-            /*float: left;*/
-        }
-
-
-        #bus:hover {
-            /*transform: scale(0.7);*/
-            transform: scale(1.5);
-        }
-
-        #lamp:hover {
-            /*transform: scale(0.7);*/
-            transform: rotate(-40deg);
-        }
-        #apple:hover{
-            transform: translateY(50px);
-        }
-        #noodle:hover {
-            transform: translateX(55px);
-        }
-        p {
-            font-weight: bold;
-            font-family: "맑은 고딕", "고딕", "HY얕은샘물M"
-        }
-
-        .navi a:link, .navi a:visited{
-            font-size: 25px;
-            padding: 10px;
-            text-decoration: none;
-        }
-        /* .navi a:focus { */
-        .navi a:hover, .navi s:focus{
-           /* background-color: #222;*/
-            background-color: #f8f8f8;
-            color: #fff;  /*  글자색  */
-        }
-        .navi a:active {
-            background-color: #f00;
-        }
 
 
 
@@ -238,6 +113,133 @@
             z-index: 1500;
         }
 
+        header {
+            background-color:#f8f8f8;
+            color: #a6c9e2;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 2px 2px #ff8800;
+
+        }
+        h1 {
+            color: #2b2b2b;
+        }
+        h2 {
+            font-size: 20px;
+        }
+
+        nav {
+            background-color:#f8f8f8;
+            color: #fff;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 2px -1px 2px 2px red;
+
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            padding-right: 50px;
+        }
+
+        section {
+            display: inline-block;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        article {
+            background-color: aquamarine;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 30px;
+            width: 80%;
+            border-radius: 1em;
+        }
+
+        article h2 {
+            color: #333;
+            font-family: "Candara";
+        }
+
+        article p {
+            color: #555;
+            font-size: 20px;
+        }
+
+        article a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .d1{
+            margin: 5px 5px 5px 5px;
+            border: 1px dotted #0066FF;
+            /*padding-left: 400px;*/
+            /*float: left;*/
+        }
+
+
+        #bus:hover {
+            /*transform: scale(0.7);*/
+            transform: scale(1.5);
+        }
+
+        #lamp:hover {
+            /*transform: scale(0.7);*/
+            transform: rotate(-40deg);
+        }
+        #apple:hover{
+            transform: translateY(50px);
+        }
+        #noodle:hover {
+            transform: translateX(55px);
+        }
+        p {
+            font-weight: normal;
+            font-family: "맑은 고딕", "고딕", "HY얕은샘물M"
+        }
+
+        .navi a:link, .navi a:visited{
+            font-size: 20px;
+            padding: 10px;
+            text-decoration: none;
+        }
+        /* .navi a:focus { */
+        .navi a:hover, .navi s:focus{
+            background-color: #222;
+            color: #fff;  /*  글자색  */
+        }
+        .navi a:active {
+            background-color: #f00;
+        }
+
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
@@ -252,44 +254,94 @@
             height: 30px;
             background:url("images/light.png");
         }
-        header h1{
-            color: deeppink;
-            font-weight: bold;
-        }
 
-
-        .sidebar1 {
-            border: 1px solid #a6a6a6;
-            width: 150px;
-
-            /*left: 200px;*/
-            /*width: 100%;*/
-            /*background-color: #ccc;*/
-            padding: 20px;
-            background-color: lightgray;
+        .box-1{
+            display: inline-grid;
+            width: 250px;
+            height: 250px;
+            margin-bottom: 300px;
+            margin-top: -160px;
+            margin-left: 180px;
             position: absolute;
-            top: 160px;
-            left: 0;
-            height: 200%;
+        }
+
+        #box2{
+            left: 310px;
+        }
+        #box3 {
+            left: 600px;
+
+        }
+        #box4 {
+            left: 890px;
+        }
+        #box5 {
+            top: 650px;
+        }
+        #box6 {
+            left: 310px;
+            top: 650px;
+        }
+        #box7 {
+            top: 650px;
+            left: 600px;
+        }
+        #box8 {
+            top: 650px;
+            left: 890px;
+        }
+
+        #box9 {
+            top: 960px;
+        }
+        #box10 {
+            left: 310px;
+            top: 960px;
+        }
+        #box11 {
+            top: 960px;
+            left: 600px;
+        }
+        #box12 {
+            top: 960px;
+            left: 890px;
+        }
+
+        .navi {
+            font-size: 20px;
+        }
+
+        .media-1 {
+            border: 1px dotted black;
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            left: 1390px;
+            top: 200px;
+        }
+        #container-image-1{
+            width: ;
+            padding: 3px;
+            border: 1px solid red;
+        }
+        #prev{
+            font-size: 25px;
+        }
+
+        #media-control-1 {
+            background-color: #a6a6a6;
+            margin-top: 40px;
 
         }
 
-        .sidebar1 a{
-            color: blue;
-            margin: -140px;
-            padding: 0;
-            top: 100px;
-          /*  height: 500px;*/
+        #pause {
+
         }
+        .pause-1 {
+            font-size: 30px;
 
-        .sidebar1 ul li {
-            margin: 100px;
-            white-space: nowrap;
-            list-style-type: none;
         }
-
-
-    </style>
+     </style>
     <script>
         function gotoLogin() {
             window.location.href = "login/login.html";
@@ -349,45 +401,146 @@
 <!--</nav>-->
 </div>
 
+
 <section>
-    <article>
-        <h2>Add free photo effects to<br>
-            beautify your images</h2>
+    <article class="box-1">
+        <h2>추천영화</h2>
         <img id="bus" src="images/bus.jpg">
         <img id="noodle" src="images/noodle_640.png">
         <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>
-
-
-        <p>Canva makes it easy to spice up your photos! Get creative with photo effects to make your pictures cute, warm, or breathtaking.</p>
-        <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductive photo filters too! Try our “Nordic” filter to give you photo the cool, muted tones of gazing across the Baltic Sea or enjoying a San Francisco morning. Choose the “Epic” filter to punch up your photos and grant them gravitas with high contrast colors and a retro twinge. Our “Street” filter can give your pictures the weight of black and white with a dash of worn color and a heavy vignette. We have photo filters for every mood!</span>
+        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+       <!-- <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>-->
         <a href="#">더 읽기</a>
     </article>
 
-    <article>
+    <article class="box-1" id="box2">
         <h2>Important Oriental Lamp!</h2>
         <img id="lamp" src="images/lamp.jpg">
         <img src="images/lanna-food_640.png">
-        <p>Apply whimsical, soft photo filters</p>
-        <apan>Canva makes it easy to spice up your photos! Get creative with photo effects to make your pictures cute, warm, or breathtaking.</apan>
+      <!--  <p>Apply whimsical, soft photo filters</p>-->
+        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+
         <a href="#">더 읽기</a>
     </article>
 
-    <article>
+    <article class="box-1" id="box3">
         <h2>Make bolder images with striking photo filters</h2>
 <!--        <img id="apple" src="images/top.jpg">-->
         <img id="apple" src="images/apple-4967157_640.png">
-        <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>
-        <span>We have a bounty of photo filters to choose from for all kinds of occasions. Select the “Rosie” filter for a rose-wrapped look perfect for lovers and tender moments. Or try our “Retro” filter for that scrapbook-inspired vintage effect that’s all the rage. You can click through all of our filters. You can also use this filter on images for your book covers, posters, or on our magazine mockups to see what looks best for your stunning subjects. If one of our filters doesn’t look so great after all, never fear! Simply click “Normal” and your photo will go right back to the start, good as new.</span>
+      <!--  <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>도련님 찾아 떠나는 꼬꼬마 예서의 여정...★ ‘도련님’♪ TV CHOSUN 240111 방송옵션</span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box4">
+        <h2>Make bolder images with striking photo filters</h2>
+        <!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+       <!-- <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box5">
+        <h2>추천영화</h2>
+        <img id="bus" src="images/bus.jpg">
+        <img id="noodle" src="images/noodle_640.png">
+        <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>
+        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+        <!-- <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>-->
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box6">
+        <h2>Important Oriental Lamp!</h2>
+        <img id="lamp" src="images/lamp.jpg">
+        <img src="images/lanna-food_640.png">
+        <!--  <p>Apply whimsical, soft photo filters</p>-->
+        <apan>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</apan>
+
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box7">
+        <h2>Make bolder images with striking photo filters</h2>
+        <!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+        <!--  <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>도련님 찾아 떠나는 꼬꼬마 예서의 여정...★ ‘도련님’♪ TV CHOSUN 240111 방송옵션</span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box8">
+        <h2>Make bolder images with striking photo filters</h2>
+        <!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+        <!-- <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>We have a bounty of photo filters to choose from for all kinds of occasions. </span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box9">
+        <h2>추천영화</h2>
+        <img id="bus" src="images/bus.jpg">
+        <img id="noodle" src="images/noodle_640.png">
+        <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>
+        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+        <!-- <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>-->
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box10">
+        <h2>Important Oriental Lamp!</h2>
+        <img id="lamp" src="images/lamp.jpg">
+        <img src="images/lanna-food_640.png">
+        <!--  <p>Apply whimsical, soft photo filters</p>-->
+        <apan>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</apan>
+
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box11">
+        <h2>Make bolder images with striking photo filters</h2>
+        <!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+        <!--  <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>도련님 찾아 떠나는 꼬꼬마 예서의 여정...★ ‘도련님’♪ TV CHOSUN 240111 방송옵션</span>
+        <a href="#">더 읽기</a>
+    </article>
+
+    <article class="box-1" id="box12">
+        <h2>Make bolder images with striking photo filters</h2>
+        <!--        <img id="apple" src="images/top.jpg">-->
+        <img id="apple" src="images/apple-4967157_640.png">
+        <!-- <p>고향 직배송으로 싱싱하고 맛있는 사과 대폭 할인 판매!</p>-->
+        <span>We have a bounty of photo filters to choose from for all kinds of occasions. </span>
         <a href="#">더 읽기</a>
     </article>
 </section>
+<div class="media-1">
+   <div id="container-image-1">
+    <!--<img src="images/실미도_e1.jpg">-->
+       <iframe width="490" height="710" src="https://www.youtube.com/embed/p2WP7CPPypA" title="주말 BGM 지브리 치유 🎶 사상 최고의 지브리 스튜디오 음악을 듣는 2 시간의 휴식" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<footer>
+       <!--<iframe width="450" height="538" src="https://www.youtube.com/embed/영상코드?autoplay=1&mute=1"
+               title="영상제목" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+    </div>
+    <div id="media-control-1">
+    <a id="prev" href="#"><<이전</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <span class="pause-1">
+    <a id="pause">정지</a>
+   </span>
+    </div>
+</div>
 
 
-   <!-- <p id="p1">&copy; 2024 오늘 하루동안 24시간 로켓배송!</p>-->
+<!--<footer>
 
-</footer>
+
+   &lt;!&ndash; <p id="p1">&copy; 2024 오늘 하루동안 24시간 로켓배송!</p>&ndash;&gt;
+
+</footer>-->
 <!--<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>

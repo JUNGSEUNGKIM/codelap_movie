@@ -1,0 +1,31 @@
+header{ font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration:#f1f1f1;
+}
+.main{
+    width: 1280px;
+    text-decoration:#f1f1f1;
+    text-align: center;
+
+}
+
+
+.main_1 {
+    display: flex;
+    width: 860px;
+    height:1280 ;
+    margin: auto;
+    text-align: center;
+    background: #6528e0;
+
+}
+.main_1 section ul,
+.main_1 section img  {
+    display: flex;
+    text-align: center;
+    width: 200px; /* Adjust image width as needed */
+    height: auto;
+    margin-right: -5px;
+    background: #cccccc;
+}

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!doctype html>
+<html lang="en"> <!--lang="ar" dir="rtl" data-bs-theme="auto">-->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/jquery.js"></script>
-<!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
+
     <script>
         var img_src;
         var movieArray = [
@@ -24,27 +25,6 @@
             [14, "images/eng_5.jpg", "케리비안의 해적", "고어 버빈스키 감독", "매력 넘치는 해적 캡틴 잭 스패로우(죠니 뎁 분)에게 수정처럼 맑고 투명한 카리브 해는 어드벤처와 미스터리로 가득찬 세계이다. 그는 현재 해적 생활을 그만두고 한적한 삶을 살고 있다. 그런 그의 인생이 사악한 해적 캡틴 바르보사(제프리 러쉬 분)에 의해 위기를 맞는다. 캡틴 바르보사가 잭 스패로우의 해적선 ‘블랙펄(Black Pearl)’을 훔친 다음, 포트 로열(Port Royal)을 공격하여 총독(조나단 프라이스 분)의 아름다운 딸 엘리자베스 스완(카이라 나이틀리 분)을 납치해 갔기 때문이다. 평민 신분이지만 엘리자베스와 어린 시절 친구인 윌 터너(올란도 블룸 분)는 잭 스패로우와 손을 잡고 영국 함대 중에서도 가장 빠른 배인 H.M.S. 인터셉터(Interceptor) 호를 지휘하여 엘리자베스도 구하고 블랙펄 호도 되찾으려는 작전에 돌입한다. 그러나 두 사람과 그들의 보잘 것 없는 부하들은 엘리자베스의 약혼자이자 호방한 제독인 노링턴(잭 데이븐포트)과 그가 지휘하는 H.M.S. 돈트리스(Dauntless) 호의 추격을 받게 된다. 한편 캡틴 바르보사가 약탈한 ‘저주받은’ 보물들로 인해 그 자신은 물론 부하들을 영원히 죽을 수 없도록 저주를 받는다. 그들 해적들은 월광을 받으면 살아있는 해골로 변해버린다. 그들에게 내려진 저주는 그들이 훔친 보물을 하나도 빠짐없이 원래 있던 그대로 되돌려놓아야만 풀릴 수 있다. 그런 사실을 모르는 노링톤 제독과 그의 군대, 캡틴 잭 스패로우와 윌 터너는 인터셉터 호와 돈트리스 호를 타고 바르보사를 비롯한 초자연적 신비를 가진 해적들과 대적하기 위해 이슬라 데무에르타(죽음의 섬: Isla de Muerta)로 달려간다. 과연 캡틴 잭 스패로우는 바르보사에게 복수하고 블랙펄 호를 되찾을 수 있을까! 바르보사와 그의 부하들로 하여금 영원히 해골로 살도록 만든 무시무시한 저주는 풀릴 수 있을 것인가! 총독의 딸 엘리자베스를 구조하려고 떠난 대원들을 뒤쫓는 영국 해군은 먼저 엘리자베스를 구하겠다는 목적을 달성할 수 있을 것인가! 주인공 영웅들은 초자연적 해골인간 해적들을 무찌르려면 과연 어떻게 상대해야 하는 것일까!", "https://www.youtube.com/embed/-9HT0l9HV4c"],
             [15, "images/eng_6.jpg", "러브 액츄얼리", "리차드 커티스 감독", "크리스마스에 모두에게 전하고 싶은 로맨틱한 고백 사랑에 상처받은 당신을 위해, 사랑하지만 말하지 못했던 당신을 위해, 사랑에 확신하지 못했던 당신을 위해, 모두의 마음을 따뜻하게 할 선물이 찾아옵니다.", "https://www.youtube.com/embed/RI-hvj-kZlw"]
         ];
-        //
-        // var galleryItem = document.createElement("div");
-        // var galleryImg = document.createElement("img");
-        // var h4Tag = document.createElement("h4");
-        //
-        // // galleryItem.className = "gallery-item";
-        // galleryImg.src = "images/kor_1.jpg";
-        // galleryImg.alt="Movie 1";
-
-        // galleryItem.appendChild(document.createTextNode("aabc"));
-
-        // h4Tag.appendChild(document.createTextNode("괴물영화"));
-
-        // var targetElement =
-        // document.getElementById("gallery").appendChild(galleryItem);
-
-        // targetElement.appendChild(galleryItem);
-        // galleryItem.appendChild(galleryImg);
-        // galleryItem.appendChild(h4Tag);
-        // galleryItem.appendChild(galleryImg);
-        // targetElement.appendChild(galleryItem);
 
         $(function () {
             for (var i = 0; i < movieArray.length; i++) {
@@ -52,13 +32,9 @@
                 $(".gallery").append("<div class='gallery-item'>" +
                     "<img src='" + movieArray[i][1] + "' alt='ab' id='" + i + "'>" +
 
-                    "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='1'></iframe>" +
+                    "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
                     // "<iframe style='display:none' width='100' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
                     "<h4>" + movieArray[i][3] + "</h4></div>");
-
-                // $(".gallery-item").after(")
-                // $(".gallery-item").after("");
-
             }
         })
 
@@ -71,34 +47,11 @@
                 $(this).find('iframe').attr('src', movieArray[parseInt($(this).find('img').attr('id'))][5]);
                 $(this).find('iframe').show();
 
-
-                // $(this).find('iframe').attr('src','https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1');
-                // replaceWith("<iframe  width='100%' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?si=n4bl3OHNr9oq4I2r' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0' ></iframe>");
             }, function () {
                 $(this).find('iframe').hide();
                 $(this).find('img').show();
-                // alert(img_src);
-                // $(this).find('iframe').replaceWith("<img  src='"+img_src+"' alt='이미지 대체 텍스트'>");
+
             });
-
-
-            // 아래 두 함수는 교체할 요소의 위치가 서로 틀린 만큼
-            // 사용법에 주의하자
-            // $("#img_delete").hover(function( ) {
-            //     alert("호버");},function (){
-            // //     $(".txt2")
-            // //         .css({"background-color":"aqua"});
-            // // }, function(){
-            // //     $(".txt2")
-            // //         .css({"background":"none"});
-            //     $(\"#img_delete\").replaceWith(\"<iframe src=\\"https://www.youtube.com/embed/bdD3NH-_i-U?si=C2WoBgCRIO3LVQaV\\" title=\\"YouTube video player\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\\" allowfullscreen frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>");
-            // });
-            // alert("check");
-
-            // //$("기존요소").replaceWith("교체할 새요소")
-            // $("h2").replaceWith("<h3>replace method</h3>");
-            // //$("교체할 새요소").replaceAll("기존요소")
-            // $("<p>Change</p>").replaceAll("div");
         });
 
 
@@ -108,155 +61,169 @@
                 maxSlides: 5,
                 slideWidth: 300,
                 slideMargin: 20,
-                // auto: true,
-                // autoControls: true,
-                // pager: false,
-                // speed: 1000,
-                // pause: 4000,
 
-                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
-                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
             });
         });
 
 
     </script>
-    <!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
-
-    <!--    <script src="script.js"></script>-->
-
-    <title>Netflix Style Gallery</title>
+    <script src="js/color-modes.js"></script>
+    <meta charset="utf-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">-->
+<!--    <meta name="generator" content="Hugo 0.118.2">-->
+<!--    <meta name="theme-color" content="#712cf9">-->
+    <title>쇼핑몰-남성</title>
+    <link rel="stylesheet" href="css/jspage_style.css">
     <link rel="stylesheet" href="css/jquery.bxslider.min.css">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album-rtl/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
     <style>
-        .gallery-item {
-
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .gallery-container {
-            width: 80%;
-            margin: 50px auto;
-        }
-
-        .gallery {
-            display: flex;
-            overflow: hidden;
-        }
-
-        .gallery img {
-            width: 200px; /* Adjust image width as needed */
-            height: auto;
-            margin-right: 20px;
-            transition: transform 0.5s;
-        }
-
-        .gallery img:last-child {
-            margin-right: 0;
-        }
-
-        .gallery-item {
-            width: 500px; /* 갤러리 아이템의 너비 조절 */
-            margin-right: 20px;
-            border: 1px solid gray;
-        }
-
-        .gallery img{
-            width:100%;
-            margin-right: auto;
-        }
-
-        div{
-        }
-
-
-    /*    cart css     */
-
-
-         .cart {
-             position: fixed;
-             bottom: 20px;
-             right: 20px;
-             background-color: #3498db;
-             color: #fff;
-             padding: 10px;
-             border-radius: 5px;
-             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-         }
-
-        .cart-content {
-            display: none;
-            text-align: center;
-        }
-
-        .close {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-
-
-    /*    teacher chatbot css  */
-
 
     </style>
 
-<!--    <script src="js/jquery.js"></script>-->
-<!--    <script src="js/jquery.bxslider.min.js"></script>-->
+
 </head>
 <body>
+<!--<svg xmlns="http://www.w3.org/2000/svg" class="d-none">-->
+<!--    <symbol id="check2" viewBox="0 0 16 16">-->
+<!--        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>-->
+<!--    </symbol>-->
+<!--    <symbol id="circle-half" viewBox="0 0 16 16">-->
+<!--        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>-->
+<!--    </symbol>-->
+<!--    <symbol id="moon-stars-fill" viewBox="0 0 16 16">-->
+<!--        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>-->
+<!--        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>-->
+<!--    </symbol>-->
+<!--    <symbol id="sun-fill" viewBox="0 0 16 16">-->
+<!--        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>-->
+<!--    </symbol>-->
+<!--</svg>-->
 
-<div class="gallery-container">
-<!--    <ul class="gallery">-->
-<!--        <li><div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 1">-->
-<!--            <h4> 괴물 </h4></div></li>-->
-<!--        <li> <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 2">-->
-<!--            <h4> 괴물 </h4></div></li>-->
-<!--        <li> <div class="gallery-item"><img src="images/kor_2.jpg" alt="Movie 3"><h4> 괴물 </h4></div></li>-->
-<!--        <li> <div class="gallery-item"><img src="images/kor_3.jpg" alt="Movie 4"><h4> 괴물 </h4></div></li>-->
-<!--        <li>  <div class="gallery-item"><img src="images/kor_4.jpg" alt="Movie 5"><h4> 괴물 </h4></div></li>-->
-<!--        -->
-<!--        <li>  <div class="gallery-item"><img src="images/kor_5.jpg" alt="Movie 6"><h4> 괴물 </h4></div></li>-->
-<!--        <li>  <div class="gallery-item"> <img src="images/kor_6.jpg" alt="Movie 7"><h4> 괴물 </h4></div></li>-->
-<!--        <li>  <div class="gallery-item"><img src="images/kor_7.jpg" alt="Movie 8"><h4> 괴물 </h4></div></li>-->
-<!--        <li>  <div class="gallery-item"><img src="images/kor_8.jpg" alt="Movie 9"><h4> 괴물 </h4></div></li>-->
-<!--        <li>   <div class="gallery-item"><img src="images/kor_9.jpg" alt="Movie 10"><h4> 괴물 </h4></div>-->
-<!--        &lt;!&ndash; Add more images as needed &ndash;&gt;-->
-<!--    </ul>-->
-    <div class="gallery">
-<!--        <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 1">-->
-<!--        <h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_1.jpg" alt="Movie 2">-->
-<!--            <h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_2.jpg" alt="Movie 3"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_3.jpg" alt="Movie 4"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_4.jpg" alt="Movie 5"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_5.jpg" alt="Movie 6"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"> <img src="images/kor_6.jpg" alt="Movie 7"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_7.jpg" alt="Movie 8"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_8.jpg" alt="Movie 9"><h4> 괴물 </h4></div>-->
-<!--        <div class="gallery-item"><img src="images/kor_9.jpg" alt="Movie 10"><h4> 괴물 </h4></div>-->
-        <!-- Add more images as needed -->
-    </div>
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                Light
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                Dark
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                Auto
+                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+        </li>
+    </ul>
 </div>
 
 
-<div class="cart">
-    <button id="toggleCartBtn"><img src="css/images/chatBot.jpg" alt="chat-bot" width="50px" height="50px"></button>
-    <div id="cartContent" class="cart-content">
-        <span class="close" id="closeCartBtn">&times;</span>
-<!--        <p>This is a fixed cart example always positioned at the bottom right!</p>-->
+<header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4>Shoping</h4>
+                    <p class="text-body-secondary"></p>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#">
+                            <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link" href="main_test.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="manPage.html">남성복</a></li>
+                        <li class="nav-item"><a class="nav-link" href="womanPage.html">여성복</a></li>
+                        <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">남성복</a></li>-->
+                        <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">여성복</a></li>-->
+                        <li class="nav-item"><a class="nav-link" href="winterPage.html">시즌오프</a></li>
+                        <li class="nav-item"><a class="nav-link" href="noticeBoard.html">게시판</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">
+                            <svg class="bi" width="24" height="24"><use xlink:href="#cart"/></svg>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <strong>instagram</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
 
-</body>
-<script src="js/jquery.bxslider.min.js"></script>
+<main>
+
+    <section class="py-5 text-center container">
+<!--        <div class="row py-lg-5">-->
+<!--            <div class="col-lg-6 col-md-8 mx-auto">-->
+<!--                <h1 class="fw-light">남성복</h1>-->
+<!--                <p class="lead text-body-secondary">멋진 남성이 되어요</p>-->
+<!--                <p>-->
+<!--                    <a href="winterPage.html" class="btn btn-primary my-2">겨울 시즌 할인</a>-->
+<!--                    <a href="springPage.html" class="btn btn-secondary my-2">봄 신상품 할인</a>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+    </section>
+</main>
+    <div class="gallery-container">
+        <div class="gallery">
+        </div>
+    </div>
+
+    <div class="cart">
+        <button id="toggleCartBtn"><img src="css/images/chatBot.jpg" alt="chat-bot" width="50px" height="50px"></button>
+        <div id="cartContent" class="cart-content">
+            <span class="close" id="closeCartBtn">&times;</span>
+        </div>
+    </div>
+
+
+<footer class="text-body-secondary py-5">
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#">Shop and shop</a>
+        </p>
+        <p class="mb-1">@company</p>
+        <p class="mb-0>"></p>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
     document.getElementById('toggleCartBtn').addEventListener('click', function() {
         document.getElementById('cartContent').style.display = 'block';
@@ -268,28 +235,7 @@
         document.getElementById('cartContent').style.display = 'none';
     });
 </script>
-
+<script src="js/jquery.bxslider.min.js"></script>
 <script src="js/chatbot.js"></script>
-<style>
-    #cartContent{
-        width: 300px;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        height: 300px;
-        overflow-y: scroll;
-    }
-    #input-container {
-        width: 300px;
-        margin: 10px auto;
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        bottom:10px;
-
-    }
-    #user-input {
-        margin-bottom: 5px;
-    }
-</style>
+</body>
 </html>

@@ -45,7 +45,11 @@
                 }
                 $(this).find('img').hide();
                 $(this).find('iframe').attr('src', movieArray[parseInt($(this).find('img').attr('id'))][5]);
-                $(this).find('iframe').show();
+
+                $(this).find('iframe').show().setTimeout(function (){
+
+                },500);
+
 
             }, function () {
                 $(this).find('iframe').hide();

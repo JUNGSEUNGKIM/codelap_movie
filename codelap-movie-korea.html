@@ -2,110 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <link rel="stylesheet" href="styles.css">-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <!--    <script src="script.js"></script>-->
+    <script src="js/jquery.js"></script>
+    <title>Netflix Style Gallery</title>
+    <style>
+        header{
+            padding: 70px;
+            background-color: black;
+        }
 
+        nav li{
+            list-style: none;
+            display: inline;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        nav{
+            background-color: black;
+            padding: 10px;
+        }
+
+        aside li{
+            list-style: none;
+            padding: 3px;
+        }
+
+        .gallery-container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .gallery {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .gallery img {
+            width: 200px; /* Adjust image width as needed */
+            height: auto;
+            margin-right: 20px;
+            transition: transform 0.5s;
+        }
+
+        .images img {
+            width: 200px; /* Adjust image width as needed */
+            height: auto;
+            margin-right: 20px;
+            transition: transform 0.5s;
+        }
+
+        .gallery img:last-child {
+            margin-right: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.gallery').bxSlider({
+                minSlides: 5,
+                maxSlides: 5,
+                slideWidth: 220,
+                slideMargin: 20,
+                auto: true,
+                autoControls: true,
+                pager: false,
+                speed: 1000,
+                pause: 4000,
+                preventScroll: true,
+                goToPrevSlide: true,
+                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
+                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
+            });
+        });
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
 </head>
-<style>
-    header{
-        background-color: black;
-        color:white;
-        text-align: center;
-        padding: 100px;
-    }
-    nav{
-        background-color: white;
-        color: green;
-        text-align: center;
-    }
-
-    nav li{
-        /*list-style: none;*/
-        padding: 70px;
-        font-size: 20px;
-        color: green;
-        font-weight: bold;
-        display: inline;
-        text-align: center;
-    }
-
-    nav p{
-        color: red;
-        text-align: left;
-        width: 100px;
-        height: 40px;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    section ul{
-        margin-top: 20px;
-        display: inline;
-    }
-
-    section ul figure img {
-        width: 250px;
-        heigh: 500px;
-        border-radius: 20px;
-        text-align: left;
-        margin-top: 30px;
-        display: inline;
-    }
-
-
-
-</style>
-
 <body>
-    <header>
+<header>
 
-    </header>
-    <nav>
-        <p>추천순위</p>
-        <ul>
-            <li>랭킹</li>
-            <li>한국</li>
-            <li>해외</li>
-            <li>로맨스</li>
-            <li>액션</li>
-            <li>호러</li>
-        </ul>
-    </nav>
-    <section id="gallery_wrap">
-        <ul class="slide_gallery">
-            <figure>
+</header>
+<nav>
+    <ul>
+        <li>랭킹</li>
+        <li>한국영화</li>
+        <li>해외영화</li>
+        <li>로맨스</li>
+        <li>액션</li>
+        <li>호러</li>
+    </ul>
+</nav>
+<aside>
+    <ul>
+        <li class="id">
+            <label>아이디: </label>
+            <input type="text">
+            <label>비밀번호: </label>
+            <input type="password">
+            <input type="button" value="로그인">
+            <input type="button" value="회원가입">
+        </li>
+    </ul>
+</aside>
+<div class="gallery-container">
+    <div class="gallery">
+        <img src="images/7번방의 선물.jpg" alt="Movie 1">
+        <img src="images/광해.jpg" alt="Movie 2">
+        <img src="images/괴물.jpg" alt="Movie 3">
+        <img src="images/국가대표.jpg" alt="Movie 4">
+        <img src="images/도둑들.jpg" alt="Movie 5">
+        <img src="images/7번방의 선물.jpg" alt="Movie 6">
+        <img src="images/광해.jpg" alt="Movie 7">
+        <img src="images/괴물.jpg" alt="Movie 8">
+        <img src="images/국가대표.jpg" alt="Movie 9">
+        <img src="images/도둑들.jpg" alt="Movie 10">
+        <!-- Add more images as needed -->
+    </div>
+</div>
 
-                    <img src = "images/괴물.jpg">
-                    <figcaption>괴물</figcaption>
-                
-                    <img src = "images/도둑들.jpg">
-                    <figcaption>도둑들</figcaption>
+<div class="images">
+    <img src="images/7번방의 선물.jpg" alt="Movie 1">
+    <img src="images/광해.jpg" alt="Movie 2">
+    <img src="images/괴물.jpg" alt="Movie 3">
+    <img src="images/국가대표.jpg" alt="Movie 4">
+    <img src="images/도둑들.jpg" alt="Movie 5">
+    <img src="images/7번방의 선물.jpg" alt="Movie 6">
+    <img src="images/광해.jpg" alt="Movie 7">
+    <img src="images/괴물.jpg" alt="Movie 8">
+    <img src="images/국가대표.jpg" alt="Movie 9">
+    <img src="images/도둑들.jpg" alt="Movie 10">
+</div>
 
-                    <img src = "images/7번방의 선물.jpg">
-                    <figcaption>7번방의 선물</figcaption>
-
-                    <img src = "images/광해.jpg">
-                    <figcaption>광해</figcaption>
-
-                    <img src = "images/왕의 남자.jpg">
-                    <figcaption>왕의 남자</figcaption>
-
-                    <img src = "images/태극기 휘날리며.jpg">
-                    <figcaption>태극기 휘날리며</figcaption>
-
-                    <img src = "images/해운대.jpg">
-                    <figcaption>해운대</figcaption>
-
-                    <img src = "images/실미도.jpg">
-                    <figcaption>실미도</figcaption>
-
-                    <img src = "images/국가대표.jpg">
-                    <figcaption>국가대표</figcaption>
-
-            </figure>
-        </ul>
-    </section>
-    <footer>
-
-    </footer>
 </body>
 </html>

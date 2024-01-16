@@ -310,44 +310,65 @@
         .navi {
             font-size: 20px;
         }
+        .headerBox-1{
+            text-align: left;
+        }
+        #loginObj{
+            /*margin-left: 500px;*/
+        }
+        .onjCls {
+            /*background-color: #cccccc;*/
+             margin-left: 1330px;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        #memberObj{
+            /*margin-left: 200px;*/
+            /*margin-left: 500px;*/
+        }
+
 
         .media-1 {
-            border: 1px dotted black;
+            /*border: 1px dotted black;*/
             position: absolute;
-            width: 500px;
+            /*width: 500px;*/
             height: 350px;
             left: 1390px;
             top: 200px;
         }
         #container-image-1{
-            width: ;
-            padding: 3px;
-            border: 1px solid red;
+            width: 250px;
+            height: 310px;
+            /*padding: 3px;*/
+            /*border: 1px solid red;*/
             /*overflow: hidden;*/
         }
         #prev{
-            font-size: 25px;
+            font-size: 12px;
         }
 
         #media-control-1 {
-            background-color: #a6a6a6;
-            margin-top: 40px;
+            /*background-color: #a6a6a6;*/
+            margin-top: 50px;
 
         }
 
-        #pause {
-
-        }
         .pause-1 {
-            font-size: 28px;
+            font-size: 12px;
 
         }
+        #pause-2 {
+            width: 17px;
+        }
+
         #play-2 {
-            width: 40px;
+            width: 17px;
 
         }
         .next-1{
-            font-size: 28px;
+            font-size: 12px;
+
         }
         #movie-1 {
             position: absolute;
@@ -359,9 +380,11 @@
         }
         .slide_gallery {
               /*overflow: hidden;*/
-              visibility: hidden;
-              width: 300px;
-              height: 400px;
+            /*  visibility: hidden;*/
+            /*  width: 300px;
+              height: 400px;*/
+              width: 250px;
+              height: 310px;
          }
         #p1 {
             width: 450px;
@@ -377,7 +400,10 @@
             margin-bottom: 720px;
             margin-left: 5px;
         }
-     </style>
+        article .content-1 {
+
+        }
+    </style>
     <script>
         $(function () {
 
@@ -388,63 +414,98 @@
             });
 
 
-            function delivery(move) {
-                //alert("확인");
-                let num = 0;
-                let photoIndex = $(".photo1").index();
-                alert(photoIndex);
-                if (num < 1) {
-                    for (let i = 0; i <= move.length; i--) {
-                        num += i;
-                        $("prev").attr("src", "images/kor_3.jpg");
-                    }
-                } else if (num > 1) {
-                    for (let i = 0; i <= move.length; i++) {
-                        //num -= i;
-                        $("next").attr("src", "images/kor_+'$num[i]'+.jpg");
-                    }
-                }
-            }
+            // function delivery(move) {
+            //     //alert("확인");
+            //     let num = 0;
+            //     let photoIndex = $(".photo1").index();
+            //     alert(photoIndex);
+            //     if (num < 1) {
+            //         for (let i = 0; i <= move.length; i--) {
+            //             num += i;
+            //             $("prev").attr("src", "images/kor_3.jpg");
+            //         }
+            //     } else if (num > 1) {
+            //         for (let i = 0; i <= move.length; i++) {
+            //             //num -= i;
+            //             $("next").attr("src", "images/kor_+'$num[i]'+.jpg");
+            //         }
+            //     }
+            // }
 
             /*   }*/
 
             $("#prev").on("click", function (e) {
                 e.preventDefault();
-                let num = 0;
+                let num = 1;
 
-                let photoIndex = $(".photo1").index();
+                let photoIndex = $(".photo1").val();
                 //alert("이전"+ photoIndex);
                 alert("num :" + num+","+ photoIndex);
-                if (num <= 0) {
+                if (num > 0) {
 
-                  /*  $.each(myArray, function(index, value) {
+                    /*  $.each(photoIndex, function(index, value) {
                         console.log("Index: " + index + ", Value: " + value);
                     });
                     */
                     for (let i = 0; i <= photoIndex[num].length; i--) {
                         num -= i;
-                        $("prev").attr("src", "images/kor_+'num[i]'+.jpg");
+                        $("#prev").attr("src", "images/kor_+'num[i]'+.jpg");
                     }
-                } else if (num > 1) {
-                    for (let i = 0; i >= photoIndex[num].length; i++) {
-                        num += i;
-                        $("next").attr("src", "images/kor_+'num[i]'+.jpg");
-                    }
+                    // } else if (num >= 1) {
+                    //     for (let j = 0; j >= photoIndex[num].length; j++) {
+                    //         num += i;
+                    //         $("#next").attr("src", "images/kor_+'num[i]'+.jpg");
+                    //     }
+                    //
+                    //     }
+                }else{
+                    alert("잘못입력하셨습니다.");
                 }
 
 
-            })
+            });
 
-            /*
-                    function delivery(move){
-                        var goPrev = $("#prev").
-                        var num=1;
-                        window.location.href = "https://www.youtube.com/watch?v=p2WP7CPPypA";
-                    }*/
+            $("#next").on("click",  function(e) {
+                 e.preventDefault();
+                 let num2 = 1;
+                  let imgIndex = $(this).val();
+                  alert("다음 확인::" + imgIndex);
 
-            /*     function goPause(){
-                     alert("정지확인");
-                 }*/
+                //
+                // $(document).ready(function(){
+                //     $('.img_list li').last().prependTo('.img_list');
+                //     $('.img_list').css('left',-500);
+                //     setInterval(function(){
+                //         $('.img_list').animate({left:'-='+500},'slow',function(){
+                //             $('.img_list li') .first().appendTo('.img_list');
+                //             $('.img_list').css('left',-500);
+                //         });
+                //     },2000);
+                // });
+
+                 // $.each(imgIndex, function(index, value) {
+                 //    console.log("Index: " + index + ", Value: " + value);
+                 // });
+
+            if (num2 >= 1) {
+                        for (let j = 0; j >= imgIndex[num2].length; j++) {
+                            num2 += i;
+                            $("#next").attr("src", "images/kor_+'num[i]'+.jpg");
+                        }
+                }else {
+                alert("입력 오루입니디.");
+            }
+         });
+
+        $("#load-1").click(function(e){
+            e.preventDefault();
+            // $(".content-1").slice(0,1).show();
+            $(".content-1").slice(0,1).show();
+            if($("content-1").length == 0){
+                alert("게시물의 끝입니다.");
+            }
+
+        })
 
 
         });
@@ -486,15 +547,18 @@
 
 
 <div class="d1">
-<nav>
+<nav class="headerBox-1">
     <ul>
-        <li class="navi"><a  href="login/login.html">로그인</a></li>
-        <li class="navi"><a  href="sigin/member.html">회원가입</a></li>
+
         <li class="navi"><a  href="product/product.html">ACTION</a></li>
         <li class="navi"><a  href="info/info.html">로맨스</a></li>
         <li class="navi"><a  href="info/info.html">실시간 급상승</a></li>
         <li class="navi"><a  href="info/info.html">드라마</a></li>
         <li class="navi"><a  href="info/info.html">호러</a></li>
+    </ul>
+    <ul class="onjCls">
+        <li id="loginObj" class="navi"><a  href="login/login.html">로그인</a></li>
+        <li id="memberObj" class="navi"><a  href="sigin/member.html">회원가입</a></li>
     </ul>
 </nav>
 </div>
@@ -519,9 +583,9 @@
         <!--<img id="noodle" src="images/noodle_640.png">-->
         <iframe id="movie-1" width="250px" height="300px" src="https://www.youtube.com/embed/nnCDkM9BVBs" title="지브리 OST 🌹 지브리 오르골 모음 🎹 기분 좋은 지브리 음악" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
        <!-- <button type="button" onclick="goProduct()" id="btn1" >이동하기</button>-->
-        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
-       <!-- <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>-->
-        <a href="#">더 읽기</a>
+        <span class="content-1">[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+        <span>Our photo filters aren’t all pumpkin spice and hand-knit sweaters — we have plenty of mysterious, seductiv</span>
+        <a id="load" href="#">더 읽기</a>
     </article>
 
     <article class="box-1" id="box2">
@@ -529,9 +593,9 @@
         <img id="lamp" src="images/lamp.jpg">
         <img src="images/lanna-food_640.png">
       <!--  <p>Apply whimsical, soft photo filters</p>-->
-        <span>[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
 
-        <a href="#">더 읽기</a>
+        <span class="content-1">[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
+        <a id="load-1" href="#">더 읽기</a>
     </article>
 
     <article class="box-1" id="box3">
@@ -644,19 +708,19 @@
                title="영상제목" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
     </div>
-    <div id="media-control-1">
-    <a id="prev" href="#" onclick="delivery(0)"><<이전&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <div id="media-control-1" >
+    <a id="prev" href="#" onclick="delivery()"><<이전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
    <span class="pause-1">
     <a id="pause">정지&nbsp;&nbsp;</a>
      <img id="pause-2" src="images/pause-1_e1.png">
     <a id="play-1">재생
     <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">
-        &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </a>
    </span>
    <span>
       <!-- <img id="play-2" src="images/play-image_963996.jpg" onclick="goPlay()">-->
-       <a onclick="delivery(1)" href="#" class="next-1 ">다음>></a>
+       <a onclick="delivery()" href="#" id="next" class="next-1 ">다음>></a>
 
    </span>
     </div>

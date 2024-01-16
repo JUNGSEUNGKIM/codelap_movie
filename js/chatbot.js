@@ -5,25 +5,34 @@ $(document).ready(function() {
 
     // 메세지를 화면에 추가
     function appendMessage(sender, message) {
-        const messageElement = $('<div></div>').html(`<strong>${sender}:</strong> ${message}`);
+        // alert(sender);
+         var messageElement="";
+        if(sender == "User") {
+            messageElement = $('<div style="border:1px solid yellow; background:yellow; width:180px; float:right; text-align: left; color:black;"></div>').html(`<strong>${sender}:</strong> ${message}`);
+
+        }else{
+            messageElement = $('<div style="border:1px solid gray; background:lightslategray; width:200px; float:left; text-align: left; color:black"></div>').html(`<strong>${sender}:</strong> ${message}`);
+        }
         chatContainer.append(messageElement);
         chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
     }
 
     // 초기 환영 메세지 출력
     function showWelcomeMessage() {
-        appendMessage('<br>Chatbot', '<br>코드랩 쇼핑몰에 오신 것을 환영합니다.' +
-            '<br>저희 쇼핑몰은 신발, 의류 전문몰입니다.' +
-            '<br>아래 주제에 대해서 문의해주세요.' +
-            '<p> 1. 신발<br> 2. 의류<br>');
+        appendMessage('Chatbot', '<br>보고싶은 영화가 있으신가요?' +
+
+            '<br>' +
+            '<p> 1. 국가별 2. 카테고리별<br>');
     }
 
     // 사용자 메시지 처리 및 응답
     function sendMessage(userMessage) {
         appendMessage('User', userMessage);
+        // CATEGORY_STATUS=parseInt(userMessage);
 
         if (CATEGORY_STATUS === 1) {
             // 상위 카테고리에 따른 응답 추가
+            // alert(userMessage.toLowerCase().includes('2'));
             if (userMessage.toLowerCase().includes('1') || userMessage.toLowerCase().includes('신발')) {
                 showSubCategories(['운동화', '구두', '샌들']);
                 CATEGORY_STATUS = 2;
@@ -34,7 +43,9 @@ $(document).ready(function() {
                 // 다른 키워드에 대한 기본 응답
                 setTimeout(function() {
                     appendMessage('Chatbot', '안녕하세요! 다른 도움이 필요하신가요?<br>');
+                    showWelcomeMessage();
                 }, 500);
+                // showWelcomeMessage();
             }
         } else if (CATEGORY_STATUS === 2) {
             // 사용자가 하위 카테고리에 대해 물어보는 경우
@@ -59,12 +70,17 @@ $(document).ready(function() {
 
     // 하위 카테고리 출력
     function showSubCategories(subCategories) {
+        var chatString ="";
         setTimeout(function() {
-            appendMessage('<br>Chatbot', '<br>아래에서 주제를 선택해주세요:<p>');
+            // appendMessage('<br>Chatbot', '<br>아래에서 주제를 선택해주세요:<p>');
             for (let i = 0; i < subCategories.length; i++) {
-                chatContainer.append(`${i + 1}. ${subCategories[i]}<br>`);
+               // chatContainer.append(`${i + 1}. ${subCategories[i]}<br>`);
+                chatString =chatString + `${i + 1}. ${subCategories[i]}<br>`;
             }
-            chatContainer.append('0. 상위 메뉴<br>');
+            chatString += '0. 상위 메뉴<br>';
+            alert(chatString);
+            appendMessage('<br>Chatbot', '<br>아래에서 주제를 선택해주세요:<p>'+chatString);
+            // chatContainer.append('0. 상위 메뉴<br>');
             chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
         }, 500);
     }
@@ -87,7 +103,7 @@ $(document).ready(function() {
     // 입력창과 전송 버튼 생성
     // let inputContainer = $('<div id="input-container"></div>').appendTo('body');
     let inputContainer = $('<div id="input-container"></div>').appendTo(document.getElementById('cartContent'));
-    let userInput = $('<input type="text" id="user-input" placeholder="메시지를 입력하세요">').appendTo(inputContainer);
+    let userInput = $('<input type="text"  id="user-input" placeholder="메시지를 입력하세요">').appendTo(inputContainer);
     let sendBtn = $('<button id="send-btn">전송</button>').appendTo(inputContainer);
 
     // 전송 버튼 클릭 이벤트

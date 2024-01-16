@@ -1,42 +1,72 @@
+body {background: #f1f2f3}
+
 header{ font-size: 27px;
     font-weight: bold;
     text-align: center;
+    padding: 30px;
 }
-
+.text_0 {
+    font-weight: bold;
+    font-size: 18px;
+}
+.text_1 {
+    font-size: 12px;
+}
 .main{
+    font-size: 18px;
     width: 800px;
-    border-bottom: 1px solid black;
     margin: auto;
-    text-align: left;
-   background-color: lime;
+    border: 1px solid #666666;
     padding: 5px 30px;
+    border-radius: 30px 30px 0px 0px;
 }
 .main h3 {
     padding-top: 5px;
-    background: #cccccc;
+    border-bottom:1px solid #cccccc ;
+}
+.more{
+    font-size: 12px;
+    width: 37px;
+    height:15px ;
+    border: 1px solid #a6a6a6;
+    float: right;
 }
 
 .main_1 {
     display: flex;
     margin: auto;
     width: 860px;
-    height:1000px ;
-    background: skyblue;
-    text-align: center;
-    font-size: 12px;
+    height:1300px ;
+    border: 1px solid #666666;
     padding-top: 34px;
+    border-collapse: collapse;
 }
-.main_1 div{}
 
-.main_1 section ul{
-    margin: auto;
+.main_1 section{
+    padding-left: 25px;
 }
+
+.main_1 section ul div{
+    padding:3px;
+    margin-left: 2px;
+    text-align: left;
+}
+
 .main_1 section ul img  {
-    width: 180px; /* Adjust image width as needed */
+    width: 200px; /* Adjust image width as needed */
     height: auto;
-    padding-left: 40px;
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.main_2 div{
+
+.main_2 h4{
+    font-size: 18px;
+    text-align: center;
+    width: 800px;
+    height: 50px;
     margin: auto;
+    border: 1px solid #666666;
+    padding: 5px 30px;
+    border-radius: 0px 0px 30px 30px;
 }

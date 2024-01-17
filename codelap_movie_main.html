@@ -413,27 +413,6 @@
                 pagerCustom: '.slider-pager'
             });
 
-
-            // function delivery(move) {
-            //     //alert("확인");
-            //     let num = 0;
-            //     let photoIndex = $(".photo1").index();
-            //     alert(photoIndex);
-            //     if (num < 1) {
-            //         for (let i = 0; i <= move.length; i--) {
-            //             num += i;
-            //             $("prev").attr("src", "images/kor_3.jpg");
-            //         }
-            //     } else if (num > 1) {
-            //         for (let i = 0; i <= move.length; i++) {
-            //             //num -= i;
-            //             $("next").attr("src", "images/kor_+'$num[i]'+.jpg");
-            //         }
-            //     }
-            // }
-
-            /*   }*/
-
             $("#prev").on("click", function (e) {
                 e.preventDefault();
                 let num = 1;
@@ -459,7 +438,7 @@
                     //
                     //     }
                 }else{
-                    //alert("잘못입력하셨습니다.");
+                    alert("잘못입력하셨습니다.");
                 }
 
 
@@ -470,18 +449,17 @@
                  let num2 = 1;
                   let imgIndex = $(this).val();
                   //alert("다음 확인::" + imgIndex);
-
                 //
-                // $(document).ready(function(){
-                //     $('.img_list li').last().prependTo('.img_list');
-                //     $('.img_list').css('left',-500);
-                //     setInterval(function(){
-                //         $('.img_list').animate({left:'-='+500},'slow',function(){
-                //             $('.img_list li') .first().appendTo('.img_list');
-                //             $('.img_list').css('left',-500);
-                //         });
-                //     },2000);
-                // });
+           $(document).ready(function(){
+                    $('.img_list li').last().prependTo('.img_list');
+                    $('.img_list').css('left',-500);
+                    setInterval(function(){
+                        $('.img_list').animate({left:'-='+500},'slow',function(){
+                            $('.img_list li') .first().appendTo('.img_list');
+                            $('.img_list').css('left',-500);
+                        });
+                    },2000);
+                });
 
                  // $.each(imgIndex, function(index, value) {
                  //    console.log("Index: " + index + ", Value: " + value);
@@ -493,14 +471,14 @@
                             $("#next").attr("src", "images/kor_+'num[i]'+.jpg");
                         }
                 }else {
-                //alert("입력 오루입니디.");
+                alert("입력 오루입니디.");
             }
          });
 
         $("#load-1").click(function(e){
             e.preventDefault();
             // $(".content-1").slice(0,1).show();
-            $(".content-1").slice(0,1).show();
+            $("").slice(0,1).show();
             if($("content-1").length == 0){
                 alert("게시물의 끝입니다.");
             }
@@ -590,10 +568,6 @@
 
     <article class="box-1" id="box2">
         <h2>Important Oriental Lamp!</h2>
-        <img id="lamp" src="images/lamp.jpg">
-        <img src="images/lanna-food_640.png">
-      <!--  <p>Apply whimsical, soft photo filters</p>-->
-
         <span class="content-1">[스페셜 선공개] ♥큰 거 온다♥ NEW지혁의 빛나는 등장! 1/15 [월] 밤 10:30 5화 방송옵션</span>
         <a id="load-1" href="#">더 읽기</a>
     </article>

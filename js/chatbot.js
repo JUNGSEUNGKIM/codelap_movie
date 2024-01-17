@@ -39,30 +39,25 @@ function calculateSimilarity(str1, str2) {
     return similarityPercentage;
 }
 
-function sortChatBot(inputItem){
-    for(var i = 0; i < inputItem.length ; i++){
-       if(inputItem[i].toLowerCase().includes("kor") || inputItem[i].toLowerCase().includes("eng")){
-           if (inputItem[i+1].toLowerCase().includes("rom") || inputItem[i+1].toLowerCase().includes("act") || inputItem[i+1].toLowerCase().includes("hor")){
-              if(inputItem[i+2].toLowerCase().includes("up")) {
-
-              }
-           }
-
-       }else if (inputItem[i].toLowerCase().includes("rom") || inputItem[i].toLowerCase().includes("act") || inputItem[i].toLowerCase().includes("hor")){
-
-       }
-    }
-    var arrayWithIndices = movieArray.map(function (row, index){
-        return {data:row, index:index};
-    });
-    arrayWithIndices.sort(function (a,b){
-        return b.data[7] - a.data[7];
-    });
-
-    var sortedIndices = arrayWithIndices.map(function (item){
-        return item.index;
-    });
-}
+// function sortChatBot(inputItem){
+//
+//     switch (inputItem.length){
+//         case 1: if(inputItem[0].toLowerCase().includes("kor")|| inputItem[0].toLowerCase().includes("kor") || inputItem[0].toLowerCase().includes("kor"))
+//         case 2:
+//         case 3:
+//
+//     }
+//     var arrayWithIndices = movieArray.map(function (row, index){
+//         return {data:row, index:index};
+//     });
+//     arrayWithIndices.sort(function (a,b){
+//         return b.data[7] - a.data[7];
+//     });
+//
+//     var sortedIndices = arrayWithIndices.map(function (item){
+//         return item.index;
+//     });
+// }
 
 
 
@@ -129,21 +124,11 @@ $(document).ready(function() {
                     }else if(sortedResults[i].item.toLowerCase().includes("액션")){
                         // alert("들어오나?")
                         inputItem.push("act");
-                    }else if(sortedResults[i].item.toLowerCase().includes("인기")){
-                        // alert("들어오나?")
-                        inputItem.push("up");
                     }
                     // alert(sortedResults[i].item);
                 }
             }
-
-            sortChatBot(inputItem);
-
-
-            // alert(inputItem);
-
-
-
+            alert(inputItem);
         }
 
 
@@ -152,11 +137,11 @@ $(document).ready(function() {
         if (CATEGORY_STATUS === 1) {
             // 상위 카테고리에 따른 응답 추가
             // alert(userMessage.toLowerCase().includes('2'));
-            if (userMessage.toLowerCase().includes('1') || userMessage.toLowerCase().includes('신발')) {
-                showSubCategories(['ㅇ', '구두', '샌들']);
+            if (userMessage.toLowerCase().includes('1') || userMessage.toLowerCase().includes('국가별')) {
+                showSubCategories(['한국', '외국']);
                 CATEGORY_STATUS = 2;
-            } else if (userMessage.toLowerCase().includes('2') || userMessage.toLowerCase().includes('의류')) {
-                showSubCategories(['여성의류', '남성의류', '유아의류']);
+            } else if (userMessage.toLowerCase().includes('2') || userMessage.toLowerCase().includes('카테고리별')) {
+                showSubCategories(['액션', '로맨스', '호러']);
                 CATEGORY_STATUS = 2;
             } else {
                 // 다른 키워드에 대한 기본 응답

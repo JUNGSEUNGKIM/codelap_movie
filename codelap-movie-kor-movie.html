@@ -610,7 +610,7 @@
             document.getElementById('movieImageTag').src=movieArray[parseInt(indexMA)-1][1];
             document.getElementById('movieTextArea').querySelector('h2').textContent = "제목  : " + movieArray[parseInt(indexMA)-1][2];
             document.getElementById('movieTextArea').querySelector('h4').textContent = "출연진  : " + movieArray[parseInt(indexMA)-1][3];
-            document.getElementById('movieTextArea').querySelector('h5').textContent = "줄거리  : " + movieArray[parseInt(indexMA)-1][4];
+            document.getElementById('movieTextArea').querySelector('h5').textContent = movieArray[parseInt(indexMA)-1][4];
         }
 
         document.getElementById('closeModalBtn').addEventListener('click', function() {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery.js"></script>
-<!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
+    <script src="js/jquery.bxslider.min.js"></script>
     <script>
         var img_src;
         var movieArray = [
@@ -24,27 +24,6 @@
             [14, "images/eng_5.jpg", "케리비안의 해적", "고어 버빈스키 감독", "매력 넘치는 해적 캡틴 잭 스패로우(죠니 뎁 분)에게 수정처럼 맑고 투명한 카리브 해는 어드벤처와 미스터리로 가득찬 세계이다. 그는 현재 해적 생활을 그만두고 한적한 삶을 살고 있다. 그런 그의 인생이 사악한 해적 캡틴 바르보사(제프리 러쉬 분)에 의해 위기를 맞는다. 캡틴 바르보사가 잭 스패로우의 해적선 ‘블랙펄(Black Pearl)’을 훔친 다음, 포트 로열(Port Royal)을 공격하여 총독(조나단 프라이스 분)의 아름다운 딸 엘리자베스 스완(카이라 나이틀리 분)을 납치해 갔기 때문이다. 평민 신분이지만 엘리자베스와 어린 시절 친구인 윌 터너(올란도 블룸 분)는 잭 스패로우와 손을 잡고 영국 함대 중에서도 가장 빠른 배인 H.M.S. 인터셉터(Interceptor) 호를 지휘하여 엘리자베스도 구하고 블랙펄 호도 되찾으려는 작전에 돌입한다. 그러나 두 사람과 그들의 보잘 것 없는 부하들은 엘리자베스의 약혼자이자 호방한 제독인 노링턴(잭 데이븐포트)과 그가 지휘하는 H.M.S. 돈트리스(Dauntless) 호의 추격을 받게 된다. 한편 캡틴 바르보사가 약탈한 ‘저주받은’ 보물들로 인해 그 자신은 물론 부하들을 영원히 죽을 수 없도록 저주를 받는다. 그들 해적들은 월광을 받으면 살아있는 해골로 변해버린다. 그들에게 내려진 저주는 그들이 훔친 보물을 하나도 빠짐없이 원래 있던 그대로 되돌려놓아야만 풀릴 수 있다. 그런 사실을 모르는 노링톤 제독과 그의 군대, 캡틴 잭 스패로우와 윌 터너는 인터셉터 호와 돈트리스 호를 타고 바르보사를 비롯한 초자연적 신비를 가진 해적들과 대적하기 위해 이슬라 데무에르타(죽음의 섬: Isla de Muerta)로 달려간다. 과연 캡틴 잭 스패로우는 바르보사에게 복수하고 블랙펄 호를 되찾을 수 있을까! 바르보사와 그의 부하들로 하여금 영원히 해골로 살도록 만든 무시무시한 저주는 풀릴 수 있을 것인가! 총독의 딸 엘리자베스를 구조하려고 떠난 대원들을 뒤쫓는 영국 해군은 먼저 엘리자베스를 구하겠다는 목적을 달성할 수 있을 것인가! 주인공 영웅들은 초자연적 해골인간 해적들을 무찌르려면 과연 어떻게 상대해야 하는 것일까!", "https://www.youtube.com/embed/-9HT0l9HV4c"],
             [15, "images/eng_6.jpg", "러브 액츄얼리", "리차드 커티스 감독", "크리스마스에 모두에게 전하고 싶은 로맨틱한 고백 사랑에 상처받은 당신을 위해, 사랑하지만 말하지 못했던 당신을 위해, 사랑에 확신하지 못했던 당신을 위해, 모두의 마음을 따뜻하게 할 선물이 찾아옵니다.", "https://www.youtube.com/embed/RI-hvj-kZlw"]
         ];
-        //
-        // var galleryItem = document.createElement("div");
-        // var galleryImg = document.createElement("img");
-        // var h4Tag = document.createElement("h4");
-        //
-        // // galleryItem.className = "gallery-item";
-        // galleryImg.src = "images/kor_1.jpg";
-        // galleryImg.alt="Movie 1";
-
-        // galleryItem.appendChild(document.createTextNode("aabc"));
-
-        // h4Tag.appendChild(document.createTextNode("괴물영화"));
-
-        // var targetElement =
-        // document.getElementById("gallery").appendChild(galleryItem);
-
-        // targetElement.appendChild(galleryItem);
-        // galleryItem.appendChild(galleryImg);
-        // galleryItem.appendChild(h4Tag);
-        // galleryItem.appendChild(galleryImg);
-        // targetElement.appendChild(galleryItem);
 
         $(function () {
             for (var i = 0; i < movieArray.length; i++) {
@@ -80,175 +59,12 @@
                 // alert(img_src);
                 // $(this).find('iframe').replaceWith("<img  src='"+img_src+"' alt='이미지 대체 텍스트'>");
             });
-
-
-            // 아래 두 함수는 교체할 요소의 위치가 서로 틀린 만큼
-            // 사용법에 주의하자
-            // $("#img_delete").hover(function( ) {
-            //     alert("호버");},function (){
-            // //     $(".txt2")
-            // //         .css({"background-color":"aqua"});
-            // // }, function(){
-            // //     $(".txt2")
-            // //         .css({"background":"none"});
-            //     $(\"#img_delete\").replaceWith(\"<iframe src=\\"https://www.youtube.com/embed/bdD3NH-_i-U?si=C2WoBgCRIO3LVQaV\\" title=\\"YouTube video player\\" frameborder=\\"0\\" allow=\\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\\" allowfullscreen frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>");
-            // });
-            // alert("check");
-
-            // //$("기존요소").replaceWith("교체할 새요소")
-            // $("h2").replaceWith("<h3>replace method</h3>");
-            // //$("교체할 새요소").replaceAll("기존요소")
-            // $("<p>Change</p>").replaceAll("div");
-        });
-
-
-        $(document).ready(function () {
-            $('.gallery').bxSlider({
-                minSlides: 4,
-                maxSlides: 5,
-                slideWidth: 300,
-                slideMargin: 20,
-                // auto: true,
-                // autoControls: true,
-                // pager: false,
-                // speed: 1000,
-                // pause: 4000,
-
-                // prevText: '<img src="path-to-left-arrow-image.png" alt="Previous">',
-                // nextText: '<img src="path-to-right-arrow-image.png" alt="Next">'
-            });
-        });
-
-
+        })
     </script>
-    <!--    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>-->
-
-    <!--    <script src="script.js"></script>-->
-
-    <title>Netflix Style Gallery</title>
-    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
-    <style>
-        .gallery-item {
-
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .gallery-container {
-            width: 80%;
-            margin: 50px auto;
-        }
-
-        .gallery {
-            display: flex;
-            overflow: hidden;
-        }
-
-        .gallery img {
-            width: 200px; /* Adjust image width as needed */
-            height: auto;
-            margin-right: 20px;
-            transition: transform 0.5s;
-        }
-
-        .gallery img:last-child {
-            margin-right: 0;
-        }
-
-        .gallery-item {
-            width: 500px; /* 갤러리 아이템의 너비 조절 */
-            margin-right: 20px;
-            border: 1px solid gray;
-        }
-
-        .gallery img{
-            width:100%;
-            margin-right: auto;
-        }
-
-        div{
-        }
-         .cart {
-             position: fixed;
-             bottom: 20px;
-             right: 20px;
-             background-color: #3498db;
-             color: #fff;
-             padding: 10px;
-             border-radius: 5px;
-             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-         }
-
-        .cart-content {
-            display: none;
-            text-align: center;
-        }
-
-        .close {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
 
-<div class="gallery-container">
-
-    <div class="gallery">
-
-    </div>
-</div>
-
-
-<div class="cart">
-    <button id="toggleCartBtn"><img src="css/images/chatBot.jpg" alt="chat-bot" width="50px" height="50px"></button>
-    <div id="cartContent" class="cart-content">
-        <span class="close" id="closeCartBtn">&times;</span>
-<!--        <p>This is a fixed cart example always positioned at the bottom right!</p>-->
-    </div>
-</div>
-
 </body>
-<script src="js/jquery.bxslider.min.js"></script>
-<script>
-    document.getElementById('toggleCartBtn').addEventListener('click', function() {
-        document.getElementById('cartContent').style.display = 'block';
-    });
+<html>
 
-
-
-    document.getElementById('closeCartBtn').addEventListener('click', function() {
-        document.getElementById('cartContent').style.display = 'none';
-    });
-</script>
-
-<script src="js/chatbot.js"></script>
-<style>
-    #cartContent{
-        width: 300px;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        height: 300px;
-        overflow-y: scroll;
-    }
-    #input-container {
-        width: 300px;
-        margin: 10px auto;
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        bottom:10px;
-
-    }
-    #user-input {
-        margin-bottom: 5px;
-    }
-</style>
 </html>

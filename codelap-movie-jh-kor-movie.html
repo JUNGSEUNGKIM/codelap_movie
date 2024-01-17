@@ -576,7 +576,7 @@
         function recentAction(indexMA) {
             for(var i=0; i < movieArray.length; i++){
                 if(parseInt(indexMA) === parseInt(movieArray[i][0])){
-                    indexMA = movieArray[i][0];
+                    indexMA = i+1;
                     break;
                 }
             }

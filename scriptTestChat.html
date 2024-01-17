@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="js/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+
+
+    function calculateSimilarity(str1, str2) {
+      var totalLength = 0;
+      var similarityPercentage = 0;
+      var minLength = 0;
+      var matchCount = 0;
+      var strSplit = str2.split(" ");
+      if(strSplit === 1) {
+        for (var j = 0; j < strSplit[0].length; j++) {
+          minLength = Math.min(str1.length, strSplit[0].length);
+          if (str1[j] === strSplit[0][j]) {
+            matchCount++;
+          }
+        }
+        if(matchCount >= 2) {
+          totalLength = (str1.length + strSplit[0].length - matchCount) / 2;
+          similarityPercentage = (matchCount / totalLength) * 100;
+          matchCount = 0;
+        }else{
+          matchCount = 0;
+        }
+      }else{
+        for(var j = 0; j < strSplit.length ; j++) {
+          minLength = Math.min(str1.length, strSplit[j].length);
+          for (var i = 0; i < minLength; i++) {
+            if (str1[i] === strSplit[j][i]) {
+              matchCount++;
+            }
+          }
+          if(matchCount >= 2){
+            totalLength = (str1.length + strSplit[j].length - matchCount) / 2;
+            similarityPercentage = (matchCount / totalLength) * 100;
+            matchCount = 0;
+            break;
+          }
+        }
+      }
+      return similarityPercentage;
+    }
+
+
+
+    const similarityScore = calculateSimilarity("JavaScript", "Java");
+    console.log(similarityScore); // 예상 출력: 86
+    //
+    const searchItems = ["자바스크립트", "자연어", "머신" , "오리" , "고양이" , "김치"];
+    function search(){
+      var userInput = $("#searchInput").val().toLowerCase();
+      var results = $("#results");
+      var sortedResults = searchItems
+              .map(item => ({ item, similarity: calculateSimilarity(item.toLowerCase(), userInput) }))
+              .sort((a, b) => b.similarity - a.similarity);
+      // results.empty();
+      // sortedResults.forEach(result => {
+      //   alertMessage += `${result.item} - Similarity: ${result.similarity}%\n`;
+      // });
+
+
+      alert("Sorted Results:\n" + JSON.stringify(sortedResults, null, 2));
+      alert(sortedResults[0].item);
+
+
+
+
+    }
+  </script>
+</head>
+<body>
+
+<input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+<button onclick="search()"> 버튼</button>
+<ul id="results"></ul>
+
+</body>
+</html>

@@ -84,10 +84,10 @@
 
 
 
-        function getCategoryRomanMovie(){
+        function getCategoryRomanMovie(inputMessage){
             //alert("EEEEEEEE");
             for (let i = 1; i < movieArray.length; i++) {
-                if (movieArray[i][6] === "roman") {
+                if (movieArray[i][6] === inputMessage) {
                     //alert(movieArray[i][6]);
 
                     $("#colContainer").children().append("<div class='col'>" +

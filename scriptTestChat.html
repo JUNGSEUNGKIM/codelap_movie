@@ -9,133 +9,69 @@
 
 
     function calculateSimilarity(str1, str2) {
-      var totalLength;
-      var similarityPercentage;
-      var minLength;
+      var totalLength = 0;
+      var similarityPercentage = 0;
+      var minLength = 0;
       var matchCount = 0;
-      alert("calculate input : " + str1 + ",," + str2);
-      alert("length : " + str2.length);
-      for(var j = 0; j < str2.length ; j++){
-        minLength = Math.min(str1.length, str2[j].length);
-
-        if(str2[j].length === 1){
-          if (str1[j] === str2[j]) {
+      var strSplit = str2.split(" ");
+      if(strSplit === 1) {
+        for (var j = 0; j < strSplit[0].length; j++) {
+          minLength = Math.min(str1.length, strSplit[0].length);
+          if (str1[j] === strSplit[0][j]) {
             matchCount++;
-            alert("여기 매치 : " + matchCount);
           }
-        }else{
-          for (let i = 0; i < minLength; i++) {
-            if (str1[i] === str2[j][i]) {
-              matchCount++;
-              alert(matchCount);
-            }
-          }
-          totalLength = str1.length + str2.length / 2;
+        }
+        if(matchCount >= 2) {
+          totalLength = (str1.length + strSplit[0].length - matchCount) / 2;
           similarityPercentage = (matchCount / totalLength) * 100;
           matchCount = 0;
-          if(similarityPercentage > 90) {
+        }else{
+          matchCount = 0;
+        }
+      }else{
+        for(var j = 0; j < strSplit.length ; j++) {
+          minLength = Math.min(str1.length, strSplit[j].length);
+          for (var i = 0; i < minLength; i++) {
+            if (str1[i] === strSplit[j][i]) {
+              matchCount++;
+            }
+          }
+          if(matchCount >= 2){
+            totalLength = (str1.length + strSplit[j].length - matchCount) / 2;
+            similarityPercentage = (matchCount / totalLength) * 100;
+            matchCount = 0;
             break;
           }
         }
-        if(similarityPercentage > 90) {
-          break;
-        }
-
       }
-
-        totalLength = (str1.length + str2.length) / 2;
-        similarityPercentage = (matchCount / totalLength) * 100;
-        matchCount = 0;
-
-
-
-
-
       return similarityPercentage;
-
-      // const minLength = Math.min(str1.length, str2.length);
-      // let matchCount = 0;
-      //
-      // for (let i = 0; i < minLength; i++) {
-      //   if (str1[i] === str2[i]) {
-      //     matchCount++;
-      //   }
-      // }
-      //
-      // // const totalLength = str1.length + str2.length - matchCount;
-      // // const similarityPercentage = (matchCount / totalLength) * 100;
-      // console.log(similarityPercentage);
-      // return Math.round(similarityPercentage);
     }
-      // const minLength = Math.min(str1.length, str2.length);
-      // let matchCount = 0;
-
-
-
-      // const totalLength = str1.length + str2.length / 2;
-      // const similarityPercentage = (matchCount / totalLength) * 100;
-      //
-      // alert("결과 :" + similarityPercentage);
-      //
-      // return Math.round(similarityPercentage);
-
 
 
 
     const similarityScore = calculateSimilarity("JavaScript", "Java");
     console.log(similarityScore); // 예상 출력: 86
     //
-    const searchItems = ["자바스크립트", "자연어", "머신"];
+    const searchItems = ["자바스크립트", "자연어", "머신" , "오리" , "고양이" , "김치"];
     function search(){
-      alert("입장");
-      const userInput = $("#searchInput").val().toLowerCase().split(" ")
-      alert("userInput : "+userInput);
-      const results = $("#results");
-
-      const sortedResults = searchItems
+      var userInput = $("#searchInput").val().toLowerCase();
+      var results = $("#results");
+      var sortedResults = searchItems
               .map(item => ({ item, similarity: calculateSimilarity(item.toLowerCase(), userInput) }))
               .sort((a, b) => b.similarity - a.similarity);
+      // results.empty();
+      // sortedResults.forEach(result => {
+      //   alertMessage += `${result.item} - Similarity: ${result.similarity}%\n`;
+      // });
+
+
+      alert("Sorted Results:\n" + JSON.stringify(sortedResults, null, 2));
+      alert(sortedResults[0].item);
 
 
 
 
-      alert(sortedResults);
-
-      results.empty();
-      sortedResults.forEach(result => {
-        results.append(`<li>${result.item}</li>`);
-      });
     }
-    // // $(document).ready(function () {
-    // //   // 미리 정의된 검색 대상 목록
-    // //   const searchItems = ["자바스크립트 기초", "자연어 처리 개발", "머신 러닝 알고리즘"];
-    // //
-    // //   // 검색어 입력 이벤트 처리
-    // //   $("#searchInput").on("input", function () {
-    // //     const userInput = $(this).val().toLowerCase();
-    // //     const results = $("#results");
-    // //
-    // //     // 검색어와 각 항목의 유사도 계산 및 정렬
-    // //     const sortedResults = searchItems
-    // //             .map(item => ({ item, similarity: calculateSimilarity(userInput, item.toLowerCase()) }))
-    // //             .sort((a, b) => b.similarity - a.similarity);
-    // //
-    // //     // 결과를 화면에 표시
-    // //     results.empty();
-    // //     sortedResults.forEach(result => {
-    // //       results.append(`<li>${result.item}</li>`);
-    // //     });
-    // //   });
-    //
-    //   // 문자열 유사도 계산 함수
-    //   function calculateSimilarity(str1, str2) {
-    //
-    //     similarity()
-    //     // const similarity = stringSimilarity.compareTwoStrings(str1, str2);
-    //     //         // stringSimilarity.compareTwoStrings(str1, str2);
-    //     return Math.round(similarity * 100);
-    //   }
-
   </script>
 </head>
 <body>

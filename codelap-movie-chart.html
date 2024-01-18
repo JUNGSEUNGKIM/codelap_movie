@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실시간 영화 차트</title>
+    <title>실시간 영화 영화 차트</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -55,10 +55,10 @@
     <canvas id="stockChart"></canvas>
 </div>
 <script>
-    const stockPrices = []; // 삼성전자 주가를 저장할 배열
-    let stockChart; // 차트 변수를 전역으로 선언
+    const stockPrices = []; // 영화 영화를 저장할 배열
+    let stockChart; // 영화 차트 변수를 전역으로 선언
 
-    // 차트 초기화
+    // 영화 차트 초기화
     const ctx = document.getElementById('stockChart').getContext('2d');
     stockChart = new Chart(ctx, {
         type: 'line',
@@ -93,7 +93,7 @@
         const newPrice = currentPrice + priceChange;
 
 
-        // 주가 배열에 추가
+        // 영화 배열에 추가
         stockPrices.push(newPrice);
 
         // 최대 10개까지만 유지
@@ -101,7 +101,7 @@
             stockPrices.shift(); // 첫 번째 원소 제거
         }
 
-        // 차트 업데이트
+        // 영화 차트 업데이트
         updateChart();
 
         // 변동 및 변동률 업데이트
@@ -113,7 +113,7 @@
     // 초기 업데이트
     updateMovie();
 
-    // 랜덤한 시간 주기로 주가 업데이트
+    // 랜덤한 시간 주기로 영화 업데이트
     const MIN_INTERVAL = 1000; // 최소 1초
     const MAX_INTERVAL = 3000; // 최대 3초
     function scheduleUpdate() {

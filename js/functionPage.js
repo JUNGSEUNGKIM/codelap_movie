@@ -1,5 +1,21 @@
+function testSort(){
+    movieArray[0][7];
+    var indexMovie;
+    for(var i=0; i < movieArray.length ; i++){
+       if(indexMovie.length === 0){
+           indexMovie.push(i,movieArray[i][0]);
+       }else{
+
+       }
+
+    }
+}
+
+
+
 function sortCategoryView(){
-    var arrayWithIndices = movieArray.map(function (row, index) {
+    var arrayWithIndices = movieArray.map(
+        function (row, index) {
         return {data: row, index: index};
     });
     arrayWithIndices.sort(function (a, b) {
@@ -86,13 +102,15 @@ function sortArea(sortedIndices){
     for (var i = 0; i < sortedIndices.length; i++) {
         // for(var j = 0; j < movieArray[i].length; j++) {
         $("#gallerySort").append(
+
             "<div class='gallery-item'>" +
             "<img src='" + movieArray[sortedIndices[i]][1] + "' alt='ab' id='" + movieArray[sortedIndices[i]][0] + "'>" +
+            "<iframe style='display:none' width='100%' height='100%' src='loading.html' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
 
-            "<iframe style='display:none' width='100%' height='80%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
+
             "<div style='width: 100%; height: 20%; '><h4>" + " 제목 :" + movieArray[sortedIndices[i]][2] + "</h4>" +
             "<h5>" + "출연진 :" + movieArray[sortedIndices[i]][3] + "</h5><div><button onclick='recentAction("+movieArray[sortedIndices[i]][0]+")' </div>");
-    }
+     }
 
 }
 function textSort(tagId,sortedIndices){
@@ -104,8 +122,7 @@ function textSort(tagId,sortedIndices){
             "<div class='gallery-item'>" +
             "<img src='" + movieArray[sortedIndices[i]][1] + "' alt='ab' id='" + movieArray[sortedIndices[i]][0] + "'>" +
 
-            "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
-            // "<iframe style='display:none' width='100' height='100%' src='https://www.youtube.com/embed/64aNeYsa6Iw?autoplay=1&mute=1' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='0'></iframe>" +
+            "<iframe style='display:none' width='100%' height='100%' src='loading.html' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
             "<h4>" + " 제목 :" + movieArray[sortedIndices[i]][2] + "</h4>" +
             "<h5>" + "출연진 :" + movieArray[sortedIndices[i]][3] + "</h5></div>");
     }

@@ -1,0 +1,523 @@
+
+<!doctype html>
+<html lang="en"> <!--lang="ar" dir="rtl" data-bs-theme="auto">-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script src="js/jquery.js"></script>
+    <script src="js/movie_array.js"></script>
+    <script src="js/functionPage.js"></script>
+    <style>
+
+        .category {
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+
+        $("html").attr("data-bs-theme","dark");
+        var img_src;
+
+        $(function () {
+            for (let i = 1; i < movieArray.length; i++) {
+                // for(var j = 0; j < movieArray[i].length; j++) {
+                //if(movieArray[i][6] === "roman"){
+                    $(".gallery").append("<div class='gallery-item'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='ab' id='" + movieArray[i][0] + "'>" +
+
+                        "<iframe style='display:none' width='100%' height='100%' src='loading.html' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
+                        "<h4>" + movieArray[i][3] + "</h4></div>");
+                //}
+
+            }
+        });
+
+        $(function () {
+            // alert(movieArray[0][1].split("/")[1]);
+            var sorMovieArray=sortCategoryView();
+
+                for (var i = 1; i < sorMovieArray.length; i++) {
+
+                        $("#colContainer").children().append("<div class='col'>"+
+                            "<div class='card shadow-sm'>" +
+                            "<img src='"+movieArray[sorMovieArray[i]][1]+"' alt='"+movieArray[sorMovieArray[i]][1].split("/")[1]+"' style='width:100%; height:225px;'>"+
+                            "<div class='card-body' style='height: 150px; position:relative;'>" +
+                            "<p class='card-text'>"+movieArray[sorMovieArray[i]][2]+"</p>"+
+                            "<div class='d-flex justify-content-between align-items-center' style='position: absolute; bottom:10px;'>" +
+                            "<div class='btn-group'>" +
+                            "<button type='button' onclick='recentAction(" +movieArray[sorMovieArray[i]][0]+ ")' class='btn btn-primary' style='font-size: 10px;'>구매하기</button>"+
+                            "</div>" +
+                            " <small class='text-body-secondary' style='margin:10px;'>" +
+                            "</small></div>"+
+                            "</div></div></div>")
+
+
+
+                    }
+
+                    // for(var j = 0; j < movieArray[i].length; j++) {
+                    // $(".container").children().append("<div class='gallery-item'>" +
+                    //     "<img src='" + movieArray[i][1] + "' alt='ab' id='" + movieArray[i][0] + "'>" +
+                    //
+                    //     "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
+                    //     "<h4>" + movieArray[i][3] + "</h4></div>");
+
+
+            })
+
+
+
+        function getCategoryRomanMovie(){
+            $("#colContainer").children().empty();
+            //alert("EEEEEEEE");
+
+            for (let i = 1; i < movieArray.length; i++) {
+                if (movieArray[i][6] === "rom") {
+                    //alert(movieArray[i][6]);
+
+                    $("#colContainer").children().append("<div class='col'>" +
+                        "<div class='card shadow-sm'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='" + movieArray[i][1].split("/")[1] + "' style='width:100%; height:225px;'>" +
+                        "<div class='card-body' style='height: 150px; position:relative;'>" +
+                        "<p class='card-text'>" + movieArray[i][2] + "</p>" +
+                        "<div class='d-flex justify-content-between align-items-center' style='position: absolute; bottom:10px;'>" +
+                        "<div class='btn-group'>" +
+                        "<button type='button' onclick='recentAction(" + movieArray[i][0] + ")' class='btn btn-primary' style='font-size: 10px;'>구매하기</button>" +
+                        "</div>" +
+                        " <small class='text-body-secondary' style='margin:10px;'>" +
+                        "</small></div>" +
+                        "</div></div></div>")
+
+                }
+            }
+        }
+
+
+        function getCategoryActMovie(){
+            $("#colContainer").children().empty();
+            //alert("EEEEEEEE");
+            for (let i = 1; i < movieArray.length; i++) {
+                if (movieArray[i][6] === "act") {
+                    //alert(movieArray[i][6]);
+
+                    $("#colContainer").children().append("<div class='col'>" +
+                        "<div class='card shadow-sm'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='" + movieArray[i][1].split("/")[1] + "' style='width:100%; height:225px;'>" +
+                        "<div class='card-body' style='height: 150px; position:relative;'>" +
+                        "<p class='card-text'>" + movieArray[i][2] + "</p>" +
+                        "<div class='d-flex justify-content-between align-items-center' style='position: absolute; bottom:10px;'>" +
+                        "<div class='btn-group'>" +
+                        "<button type='button' onclick='recentAction(" + movieArray[i][0] + ")' class='btn btn-primary' style='font-size: 10px;'>구매하기</button>" +
+                        "</div>" +
+                        " <small class='text-body-secondary' style='margin:10px;'>" +
+                        "</small></div>" +
+                        "</div></div></div>")
+
+                }
+            }
+        }
+
+
+        function getCategoryDramaMovie(){
+            $("#colContainer").children().empty();
+            //alert("EEEEEEEE");
+            for (let i = 1; i < movieArray.length; i++) {
+                if (movieArray[i][6] === "drama") {
+                    //alert(movieArray[i][6]);
+
+                    $("#colContainer").children().append("<div class='col'>" +
+                        "<div class='card shadow-sm'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='" + movieArray[i][1].split("/")[1] + "' style='width:100%; height:225px;'>" +
+                        "<div class='card-body' style='height: 150px; position:relative;'>" +
+                        "<p class='card-text'>" + movieArray[i][2] + "</p>" +
+                        "<div class='d-flex justify-content-between align-items-center' style='position: absolute; bottom:10px;'>" +
+                        "<div class='btn-group'>" +
+                        "<button type='button' onclick='recentAction(" + movieArray[i][0] + ")' class='btn btn-primary' style='font-size: 10px;'>구매하기</button>" +
+                        "</div>" +
+                        " <small class='text-body-secondary' style='margin:10px;'>" +
+                        "</small></div>" +
+                        "</div></div></div>")
+
+                }
+            }
+        }
+
+        function getCategoryHorMovie(){
+            //alert("EEEEEEEE");
+            $("#colContainer").children().empty();
+            for (let i = 1; i < movieArray.length; i++) {
+                if (movieArray[i][6] === "hor") {
+                    //alert(movieArray[i][6]);
+
+                    $("#colContainer").children().append("<div class='col'>" +
+                        "<div class='card shadow-sm'>" +
+                        "<img src='" + movieArray[i][1] + "' alt='" + movieArray[i][1].split("/")[1] + "' style='width:100%; height:255px;'>" +
+                        "<div class='card-body' style='height: 150px; position:relative;'>" +
+                        "<p class='card-text'>" + movieArray[i][2] + "</p>" +
+                        "<div class='d-flex justify-content-between align-items-center' style='position: absolute; bottom:10px;'>" +
+                        "<div class='btn-group'>" +
+                        "<button type='button' onclick='recentAction(" + parseInt(movieArray[i][0]) + ")' class='btn btn-primary' style='font-size: 10px;'>구매하기</button>" +
+                        "</div>" +
+                        " <small class='text-body-secondary' style='margin:10px;'>" +
+                        "</small></div>" +
+                        "</div></div></div>")
+
+                }
+            }
+        }
+
+
+
+            // for (let i = 1; i < movieArray.length; i++) {
+            //     // for(var j = 0; j < movieArray[i].length; j++) {
+            //     $(".gallery").children().append("<div class='gallery-item'>" +
+            //         "<img src='" + movieArray[i][1] + "' alt='ab' id='" + movieArray[i][0] + "'>" +
+            //
+            //         "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
+            //         "<h4>" + movieArray[i][3] + "</h4></div>");
+            // }
+
+            /*
+                <div class="col">
+                <div class="card shadow-sm">
+                    <img src="images/kor_1.jpg" alt="영화" style="width:100%; height:225px;">
+                    <div class="card-body" style="height: 150px; position:relative;">
+                        <p class="card-text" >괴물 </p>
+                        <div class="d-flex justify-content-between align-items-center" style="position: absolute;  bottom:10px;">
+                            <div class="btn-group"  >
+                                <button type="button" onclick="recentAction(1)" class="btn btn-primary" style="font-size: 10px;">구매하기</button>
+                            </div>
+                            <small class="text-body-secondary" style="margin:10px;"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           */
+
+
+        //   for (let j = 1; j < movieArray.length; j++) {
+        //       // for(var j = 0; j < movieArray[i].length; j++) {
+        //       $(".col").children().append("<div class='card shadow-sm'>" +
+        //           "<img src='" + movieArray[j][1] + "' alt='영화' id='" + movieArray[j][0] + style='width:100%; height:225px' '">" +
+        //           "<iframe style='display:none' width='100%' height='100%' src='#' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen='1'></iframe>" +
+        //           "<h4>" + movieArray[i][3] + "</h4></div>");
+        //   }
+
+        //
+
+        $(function(){
+            $("#categoryBtn1").on("click", function(e){
+                e.preventDefault();
+               // alert("2");
+                getCategoryRomanMovie();
+            });
+        });
+
+        $(function(){
+            $("#categoryBtn2").on("click", function(e){
+                e.preventDefault();
+                // alert("2");
+                getCategoryActMovie();
+            });
+        });
+
+        $(function(){
+            $("#categoryBtn3").on("click", function(e){
+                e.preventDefault();
+                // alert("2");
+                getCategoryDramaMovie();
+            });
+        });
+
+        $(function(){
+            $("#categoryBtn4").on("click", function(e){
+                e.preventDefault();
+                // alert("2");
+                getCategoryHorMovie();
+            });
+        });
+
+
+
+
+        $(function () {
+            var indexAr = 0;
+            $(".gallery-item").hover(function () {
+                // img_src = $(this).find('img').attr('src');
+                // alert($(this).find('img').attr('id'));
+                for (var i = 0; i < movieArray.length; i++) {
+                    if(parseInt($(this).find('img').attr('id')) === parseInt(movieArray[i][0])){
+                        indexAr = i;
+                        //alert("if문: "+i);
+                        break;
+                    }
+                }
+                $(this).find('img').hide();
+                $(this).find('iframe').attr('src', movieArray[parseInt(indexAr)][5]);
+                $(this).find('iframe').show();
+
+            }, function () {
+                // alert(indexAr);
+                $(this).find('iframe').hide();
+                // $(this).find('iframe').attr('src', "#");
+                $(this).find('img').attr('href', movieArray[parseInt(indexAr)][1]);
+                $(this).find('img').show();
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('.gallery').bxSlider({
+                minSlides: 4,
+                maxSlides: 5,
+                slideWidth: 300,
+                slideMargin: 20,
+            });
+        });
+
+
+    </script>
+    <script src="js/color-modes.js"></script>
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">-->
+<!--    <meta name="generator" content="Hugo 0.118.2">-->
+<!--    <meta name="theme-color" content="#712cf9">-->
+    <title>쇼핑몰-남성</title>
+    <link rel="stylesheet" href="css/jspage_style.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album-rtl/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+
+    </style
+
+</head>
+<body>
+<!--네비게에션 바 입니다. -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+
+    <div class="container-fluid container">
+        <a class="navbar-brand" href="codelap-movie-main-ver1.html" style="font-size: 2em; color: red">CODELAPFLIX</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="nav-item"><a class="nav-link" href="#">
+                    <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-kor-movie.html">한국영화</a></li>
+                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-eng-movie.html">해외영화</a></li>
+                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-gen-movie">장르별영화</a></li>
+                <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">남성복</a></li>-->
+                <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">여성복</a></li>-->
+                <!--                <li class="nav-item"><a class="nav-link" href="winterPage.html"></a></li>-->
+                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-notice.html"l>게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                <!--                <li class="nav-item"><a class="nav-link" href="#"> 로그인-->
+                <!--                    <svg class="bi" width="10" height="10"><use xlink:href="#aperture"/></svg>-->
+                <!--                </a></li>-->
+                <!--                <li class="nav-item"><a class="nav-link" href="#"> 회원가입-->
+                <!--                    <svg class="bi" width="10" height="10"><use xlink:href="#aperture"/></svg>-->
+                <!--                </a></li>-->
+                <li class="nav-item"><a class="nav-link" href="#" id="navLogin"> login
+                    <svg class="bi" width="0" height="24"><use xlink:href="#cart"/></svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> sign in
+                    <svg class="bi" width="0" height="24"><use xlink:href="#cart"/></svg>
+                </a></li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!--    네비게이션 바 입니다.  위에 href 만 수정해 주세요   -->
+
+<!--  네비게이션 바와 메인 사이 입니다. 주제를 적어주세요 -->
+<main>
+    <section class="py-2 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light" style="padding-top: 50px">장르별영화</h1>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!--갤러리 박스 입니다. class galley-item을 포함한 자식을 추가해 주세요 -->
+    <div class="gallery-container">
+        <div class="gallery">
+
+<!--            class gallery-item 시작입니다.-->
+
+<!--            class gallery-item 끝입니다.-->
+
+        </div>
+
+    </div>
+<div class="category">
+<button  type="button" id="categoryBtn1" class="categoryBtn" onclick="getCategoryRomanMovie()">로맨스영화 추천</button>
+<button  type="button" id="categoryBtn2" class="categoryBtn" onclick="getCategoryActMovie()">액션영화 추천</button>
+<button  type="button" id="categoryBtn3" class="categoryBtn" onclick="getCategoryDramaMovie()">드라마틱영화 추천</button>
+<button  type="button" id="categoryBtn4" class="categoryBtn" onclick="getCategoryHorMovie()">호러영화 추천</button>
+</div>
+
+<!--컨테이너 박스입니다. class : col를 포함한 자식을 추가해 주세요 -->
+<div class="album py-5 bg-body-tertiary">
+    <div class="container"  id="colContainer">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+<!--&lt;!&ndash;            class : col      &ndash;&gt;-->
+<!--            <div class="col">-->
+<!--                <div class="card shadow-sm">-->
+<!--                    <img src="images/kor_1.jpg" alt="영화" style="width:100%; height:225px;">-->
+<!--                    <div class="card-body" style="height: 150px; position:relative;">-->
+<!--                        <p class="card-text" >괴물 </p>-->
+<!--                        <div class="d-flex justify-content-between align-items-center" style="position: absolute;  bottom:10px;">-->
+<!--                            <div class="btn-group"  >-->
+<!--                                <button type="button" onclick="recentAction(1)" class="btn btn-primary" style="font-size: 10px;">구매하기</button>-->
+<!--                            </div>-->
+<!--                            <small class="text-body-secondary" style="margin:10px;"></small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--&lt;!&ndash;   하단 괴물 영역 목록 &ndash;&gt;-->
+<!--            <div class="col">-->
+<!--                <div class="card shadow-sm">-->
+<!--                    <img src="images/kor_1.jpg" alt="kor_1" style="width:100%; height:225px;">-->
+<!--                    <div class="card-body" style="height: 150px; position:relative;">-->
+<!--                        <p class="card-text" >괴물 </p>-->
+<!--                        <div class="d-flex justify-content-between align-items-center" style="position: absolute;  bottom:10px;">-->
+<!--                            <div class="btn-group"  >-->
+<!--                                <button type="button" onclick="recentAction(1)" class="btn btn-primary" style="font-size: 10px;">구매하기</button>-->
+<!--                            </div>-->
+<!--                            <small class="text-body-secondary" style="margin:10px;"></small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            class : col 끝      -->
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function (){
+        $(".bx-wrapper").css('max-width', '100%');
+    });
+
+</script>
+
+
+<!--    chatbot 숨김 박스입니다. -->
+    <div class="cart">
+        <button id="toggleCartBtn"><img src="css/images/chatBot.jpg" alt="chat-bot" width="50px" height="50px"></button>
+        <div id="cartContent" class="cart-content">
+            <span class="close" id="closeCartBtn">&times;</span>
+        </div>
+    </div>
+
+<!--    상세표현 박스입니다.-->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <div style="width:100%; text-align:center; height: 700px; background: white;">
+            <div style="width: 30%; height: 100%; float: left; ">
+                <img id="movieImageTag" style="width: 500px; height: 100%; margin-left: 300px" src="" alt="코리아">
+            </div>
+
+            <div>
+                <div id="movieTextArea" style="text-align: left; margin-left: 900px">
+                    <h2 style="color: green"></h2><br>
+                    <h4></h4><br>
+                    <h5 style="margin-right: 300px; text-align: justify"></h5>
+                </div>
+
+                <div style="border-bottom:0; ">
+                    <button> 이거 누르면 펑</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--    풋터 입니다.  -->
+<footer class="text-body-secondary py-5">
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#">Shop and shop</a>
+        </p>
+        <p class="mb-1">@company</p>
+        <p class="mb-0>"></p>
+    </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    //recent Action
+    //     document.getElementById('openModalBtn').addEventListener('click', function()
+        function recentAction(indexMA) {
+            for(var i=0; i < movieArray.length; i++){
+                if(parseInt(indexMA) === parseInt(movieArray[i][0])){
+                    indexMA = i+1;
+                    break;
+                }
+            }
+            // alert(indexMA);
+            // alert($(this).parent().attr('id'));
+            document.getElementById('myModal').style.display = 'block';
+            // alert(parseInt($(this).parent().attr('id'));
+            document.getElementById('movieImageTag').src=movieArray[parseInt(indexMA)-1][1];
+            document.getElementById('movieTextArea').querySelector('h2').textContent = "제목  : " + movieArray[parseInt(indexMA)-1][2];
+            document.getElementById('movieTextArea').querySelector('h4').textContent = "출연진  : " + movieArray[parseInt(indexMA)-1][3];
+            document.getElementById('movieTextArea').querySelector('h5').textContent = movieArray[parseInt(indexMA)-1][4];
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+        document.getElementById('myModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('myModal')) {
+        document.getElementById('myModal').style.display = 'none';
+        }
+         });
+
+        //chatbot action
+
+        document.getElementById('toggleCartBtn').addEventListener('click', function() {
+            document.getElementById('cartContent').style.display = 'block';
+        });
+
+
+        document.getElementById('closeCartBtn').addEventListener('click', function() {
+            document.getElementById('cartContent').style.display = 'none';
+        });
+</script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

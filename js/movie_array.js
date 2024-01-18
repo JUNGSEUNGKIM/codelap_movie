@@ -42,5 +42,9 @@ var movieArray = [
 
 
 var idpassArray = [
-    ["jskim","123456","images/kor_2,images/kor_6"]
+    ["jskim","123456","images/kor_2,images/kor_6"],
+    ["jhoho82","123456","images/eng_1,images/kor_1"],
+    ["jhlee","123456","images/kor_4,images/eng_3"],
+    ["baeej","123456","images/kor_7,images/kor_6"]
+
 ]

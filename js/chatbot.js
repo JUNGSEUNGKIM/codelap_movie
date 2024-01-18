@@ -104,7 +104,7 @@ $(document).ready(function() {
                 .map(item => ({item, similarity: calculateSimilarity(item.toLowerCase(), userMessage)}))
                 .sort((a, b) => b.similarity - a.similarity);
 
-            // var inputItem;
+            var inputItem;
             for (var i = 0; i < sortedResults.length; i++) {
                 if (sortedResults[i].similarity > 0) {
                     if(sortedResults[i] === null || sortedResults[i] === undefined){
@@ -129,6 +129,12 @@ $(document).ready(function() {
                 }
             }
             alert(inputItem);
+            var national;
+            if(inputItem == "kor" || inputItem == "eng"){
+
+            }else if(inputItem == "rom" || inputItem == "hor" || inputItem == "act"){
+
+            }
         }
 
 

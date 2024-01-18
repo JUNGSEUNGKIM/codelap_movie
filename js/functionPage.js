@@ -12,6 +12,22 @@ function testSort(){
 }
 
 
+function sortArrayUp(){
+    var arrayWithIndices = movieArray.map(
+        function (row, index) {
+            return {data: row, index: index};
+        });
+    arrayWithIndices.sort(function (a, b) {
+        return b.data[7] - a.data[7];
+    });
+
+    // var sortedIndices = arrayWithIndices.map(function (item) {
+    //     return item.index;
+    // });
+
+    return arrayWithIndices;
+}
+
 
 function sortCategoryView(){
     var arrayWithIndices = movieArray.map(

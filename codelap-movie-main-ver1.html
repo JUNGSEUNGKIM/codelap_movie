@@ -200,7 +200,7 @@
     </div>
 
 <!--    상세표현 박스입니다.-->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal" style="z-index: 990">
     <div class="modal-content">
         <span class="close" id="closeModalBtn">&times;</span>
         <div style="width:100%; text-align:center; height: 800px; background: blue;">
@@ -223,6 +223,19 @@
 
     </div>
 </div>
+
+
+
+<div id="sortChatBot" class="modal" style="z-index: 900" >
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn1">&times;</span>
+        <div style="width:100%; text-align: center; height: 800px">
+            <div class="album py-5 bg-body-tertiary">
+             <div class="container"  id="colContainer">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        </div></div></div></div></div></div>
+
+
 
 <!--    풋터 입니다.  -->
 <footer class="text-body-secondary py-5">
@@ -259,7 +272,7 @@
         function recentAction(indexMA) {
             for(var i=0; i < movieArray.length; i++){
                 if(parseInt(indexMA) === parseInt(movieArray[i][0])){
-                    indexMA = movieArray[i][0];
+                    indexMA = i;
                     movieArray[i][7]++;
                     break;
                 }
@@ -275,6 +288,8 @@
             // $(".gallery").empty();
         }
 
+
+
         document.getElementById('closeModalBtn').addEventListener('click', function() {
         document.getElementById('myModal').style.display = 'none';
         });
@@ -284,6 +299,16 @@
         document.getElementById('myModal').style.display = 'none';
         }
          });
+
+    document.getElementById('closeModalBtn1').addEventListener('click', function() {
+        document.getElementById('sortChatBot').style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('sortChatBot')) {
+            document.getElementById('sortChatBot').style.display = 'none';
+        }
+    });
 
         //chatbot action
 

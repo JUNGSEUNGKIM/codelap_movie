@@ -70,7 +70,7 @@
                 <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">남성복</a></li>-->
                 <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">여성복</a></li>-->
 <!--                <li class="nav-item"><a class="nav-link" href="winterPage.html"></a></li>-->
-                <li class="nav-item"><a class="nav-link" href="noticeBoard.html">게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-notice-movie.html">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
 <!--                <li class="nav-item"><a class="nav-link" href="#"> 로그인-->
 <!--                    <svg class="bi" width="10" height="10"><use xlink:href="#aperture"/></svg>-->
@@ -260,7 +260,7 @@
                 <label style = "display: block; margin-bottom: 8px; color: #5a23c8" for="password">Password</label>
                 <input autocomplete="off" style="width: 100%; padding:8px; margin-bottom: 16px; box-sizing: border-box" type="password" id="password" name="password" required>
 
-                <button type="submit" onclick="loginUser()">Login</button>
+                <button type="button" onclick="loginUser()">Login</button>
             </form>
         </div>
 </div>
@@ -321,36 +321,62 @@
             document.getElementById('cartContent').style.display = 'none';
         });
 
-        $("#navLogin").click(function (){
+    $("#navLogin").on("click keypress", function(event) {
+        // 클릭 또는 Enter 키 이벤트에 대한 동작을 여기에 추가
+        if (event.type === "click" || (event.type === "keypress" && event.which === 13)) {
+            $("#fullscreenOverlay").css('display', 'block');
+        }
+    });
 
-
-                // alert("아무것도 못하나?");
-                $("#fullscreenOverlay").css('display','block');
-                // <div id="fullscreenOverlay">
-                //     <p>Loading...</p>
-                // </div>
-
-
-        });
+        // $("#navLogin").on(function (){
+        //
+        //     onclick()
+        //
+        //
+        //         // alert("아무것도 못하나?");
+        //
+        //         // <div id="fullscreenOverlay">
+        //         //     <p>Loading...</p>
+        //         // </div>
+        //
+        //
+        // });
 
         function loginUser(){
             var id = $("#username").val();
-            var pass = document.getElementById("password").value;
+            var pass = $("#password").val();
+                // document.getElementById("password").value;
                 // var pass = $("#password").value;
+            // alert(id + pass);
             for(var i = 0; i < idpassArray.length ; i++) {
-            if (idpassArray[i][0] === id) {
-                if (idpassArray[i][1] === pass) {
-                     $("#fullscreenOverlay").css('display','none');
-                            $("#navLogin").empty();
-                            $("#navLogin").append("회원정보");
-                            sortUp(idpassArray[i][2]);
-                            $("#loginLogMovie").empty();
-                            $("#loginLogMovie").append("최근 본 영화와 비슷한 장르");
-                            break;
-               }
+                 if (idpassArray[i][0] === id) {
+                     if (idpassArray[i][1] === pass) {
+                         loginAction(i);
+
+                         break;
+                     }else {
+                         alert("비밀번호가 틀렸습니다.");
+                     }
+                 }else {
+                     alert("가입정보가 존재하지 않습니다.");
+                }
+
             }
-         }
- }
+        }
+
+        function loginAction(i){
+            alert("로그인 되었습니다.");
+            $("#fullscreenOverlay").css('display', 'none');
+            $("#navLogin").empty();
+            $("#navLogin").append("회원정보");
+
+
+
+            $("#loginLogMovie").empty();
+            $("#loginLogMovie").append("최근 본 영화와 비슷한 장르");
+
+            sortUp(idpassArray[i][2]);
+        }
 
 
 

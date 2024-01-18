@@ -413,7 +413,7 @@
 
    // moviechart_Values = Object.values(JSON.parse(localStorage.getItem('data')));
    // console.log(moviechart_Values);
-    alert("차트 나와라");
+    //alert("차트 나와라");
     //
     // const option ={
     //     scales: {
@@ -426,7 +426,8 @@
 
     const ctx = document.getElementById('movieChart').getContext('2d');
     movieChart = new Chart(ctx, {
-        type: 'line',
+        // type: 'line',
+        type: 'bar',
         data: {
             labels: Array.from({ length: 10 }, (_, i) => ''),
             datasets: [{

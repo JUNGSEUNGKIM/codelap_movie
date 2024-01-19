@@ -70,7 +70,7 @@
                 <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">남성복</a></li>-->
                 <!--            <li class="nav-item"><a class="nav-link" href="winterPage.html">여성복</a></li>-->
 <!--                <li class="nav-item"><a class="nav-link" href="winterPage.html"></a></li>-->
-                <li class="nav-item"><a class="nav-link" href="codelap-movie-jh-notice-movie.html">게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="noticeBoard_jhoho.html">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
 <!--                <li class="nav-item"><a class="nav-link" href="#"> 로그인-->
 <!--                    <svg class="bi" width="10" height="10"><use xlink:href="#aperture"/></svg>-->
@@ -271,7 +271,7 @@
     //     document.getElementById('openModalBtn').addEventListener('click', function()
         function recentAction(indexMA) {
             for(var i=0; i < movieArray.length; i++){
-                if(parseInt(indexMA) === parseInt(movieArray[i][0])){
+                if(parseInt(indexMA)+1 === parseInt(movieArray[i][0])){
                     indexMA = i;
                     movieArray[i][7]++;
                     break;
@@ -356,12 +356,12 @@
                          break;
                      }else {
                          alert("비밀번호가 틀렸습니다.");
+                         break
                      }
-                 }else {
-                     alert("가입정보가 존재하지 않습니다.");
-                }
+                 }
 
             }
+
         }
 
         function loginAction(i){

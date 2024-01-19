@@ -160,7 +160,7 @@ $(document).ready(function() {
         appendMessage('Chatbot', '<br>보고싶은 영화가 있으신가요?' +
 
             '<br>' +
-            '<p> 1. 국가별 2. 카테고리별<br>');
+            '<p> 제목이나 추천받고 싶은 영화를 적어주세요.<br>');
     }
 
 
@@ -178,10 +178,12 @@ $(document).ready(function() {
                 // alert(userMessage.toLowerCase().includes('2'));
                 if (userMessage.toLowerCase().includes('1') || userMessage.toLowerCase().includes('국가별')) {
                     showSubCategories(['한국', '외국']);
-                    CATEGORY_STATUS = 2;
+
+                    // CATEGORY_STATUS = 2;
                 } else if (userMessage.toLowerCase().includes('2') || userMessage.toLowerCase().includes('카테고리별')) {
                     showSubCategories(['액션', '로맨스', '호러']);
-                    CATEGORY_STATUS = 2;
+
+                    // CATEGORY_STATUS = 2;
                 } else {
                     // 다른 키워드에 대한 기본 응답
                     setTimeout(function() {
@@ -192,20 +194,20 @@ $(document).ready(function() {
                 }
             } else if (CATEGORY_STATUS === 2) {
                 // 사용자가 하위 카테고리에 대해 물어보는 경우
-                const selectedCategory = userMessage.toLowerCase();
-                if (selectedCategory.includes('운동화') || selectedCategory.includes('구두') || selectedCategory.includes('샌들')) {
-                    sendSubCategoryMessage(selectedCategory, ['운동화', '구두', '샌들']);
-                    showSubCategories(['운동화', '구두', '샌들']);
-                } else if (selectedCategory.includes('여성의류') || selectedCategory.includes('남성의류') || selectedCategory.includes('유아의류')) {
-                    sendSubCategoryMessage(selectedCategory, ['여성의류', '남성의류', '유아의류']);
-                    showSubCategories(['여성의류', '남성의류', '유아의류']);
-                } else if (userMessage === '0') {
-                    showWelcomeMessage();
-                    CATEGORY_STATUS = 1;
-                } else {
-                    // 다른 키워드에 대한 기본 응답
-                    appendMessage('<br>Chatbot', '<br>죄송합니다. 입력하신 정보로는 처리할 수 없습니다.<br>');
-                }
+                // const selectedCategory = userMessage.toLowerCase();
+                // if (selectedCategory.includes('1') || selectedCategory.includes('2') ) {
+                //     sendSubCategoryMessage(selectedCategory, ['운동화', '구두', '샌들']);
+                //     showSubCategories(['운동화', '구두', '샌들']);
+                // } else if (selectedCategory.includes('여성의류') || selectedCategory.includes('남성의류') || selectedCategory.includes('유아의류')) {
+                //     sendSubCategoryMessage(selectedCategory, ['여성의류', '남성의류', '유아의류']);
+                //     showSubCategories(['여성의류', '남성의류', '유아의류']);
+                // } else if (userMessage === '0') {
+                //     showWelcomeMessage();
+                //     CATEGORY_STATUS = 1;
+                // } else {
+                //     // 다른 키워드에 대한 기본 응답
+                //     appendMessage('<br>Chatbot', '<br>죄송합니다. 입력하신 정보로는 처리할 수 없습니다.<br>');
+                // }
             }
 
 
@@ -259,7 +261,7 @@ $(document).ready(function() {
 
             }
 
-            alert(inputItem);
+            // alert(inputItem);
             var sortedIndices1 = sortArrayUp();
             var sortedNational;
             var sortedGenre;
@@ -268,7 +270,7 @@ $(document).ready(function() {
             if(national === "kor" || national === "eng"){
                 // sortedIndices1 = sortArrayUp();
                 if(genre !== ""){
-                    alert("장르")
+                    // alert("장르")
                     sortedNAGE = textSortAreaNaGe(national,genre,sortedIndices1);
                     appendMessage('Chatbot', '검색하신 영화를 보여드립니다.<br>');
 
@@ -281,7 +283,7 @@ $(document).ready(function() {
                     // alert("널 아님")
                     var sortArrayGen ;
                 }else{
-                    alert("국가별")
+                    // alert("국가별")
                     sortedNational=textSortAreaNational(national, sortedIndices1);
                     appendMessage('Chatbot', '검색하신 영화를 보여드립니다.<br>');
 

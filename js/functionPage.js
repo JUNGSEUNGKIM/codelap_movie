@@ -125,7 +125,7 @@ function sortArea(sortedIndices){
 
 
             "<div style='width: 100%; height: 20%; '><h4>" + " 제목 :" + movieArray[sortedIndices[i]][2] + "</h4>" +
-            "<h5>" + "출연진 :" + movieArray[sortedIndices[i]][3] + "</h5><div><button onclick='recentAction("+movieArray[sortedIndices[i]][0]+")' </div>");
+            "<h5>" + "출연진 :" + movieArray[sortedIndices[i]][3] + "</h5><div><button style='width: 40px; height: 20px;' onclick='recentAction("+movieArray[sortedIndices[i]][0]+")' </div>");
      }
 
 }

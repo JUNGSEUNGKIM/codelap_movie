@@ -1,4 +1,6 @@
 
+/* 챗봇 */
+
 function calculateSimilarity(str1, str2) {
     var totalLength = 0;
     var similarityPercentage = 0;
